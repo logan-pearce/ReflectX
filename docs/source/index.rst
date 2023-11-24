@@ -1,14 +1,7 @@
-ReflectX
-===================================
 
-.. raw:: html
-
-   <div align="center">
-   <img src="images/reflectX-transp.png" width="450px">
-   </img>
-   <br/>
-   </div>
-   <br/><br/>
+.. image:: images/reflectX-transp.png
+  :width: 500
+  :alt: ReflectX Logo
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
