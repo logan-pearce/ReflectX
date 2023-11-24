@@ -1,15 +1,10 @@
 
 .. image:: images/reflectX-transp.png
   :width: 500
-  :alt: ReflectX Logo
+  :align: center
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**ReflectX** is a suite of gas giant and terrestrial planet reflected light spectra generated from `PICASO <https://natashabatalha.github.io/picaso/>`_ for detecting and characterizing exoplanets in reflected light using `MagAO-X <https://xwcl.science/>`_ and `GMagAO-X <https://magao-x.org/gmagao-x/>`_.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
 
 .. note::
 
@@ -20,5 +15,4 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   makemodel
