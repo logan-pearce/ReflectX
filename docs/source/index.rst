@@ -14,7 +14,8 @@ Contents
 --------
 
 .. toctree::
-   :titlesonly:
-   terrestrialgrid
-   gasgiantgrid
-   makemodel
+   :maxdepth: 1
+
+   The Terrestrial ReflectX Grid <terrestrialgrid>
+   The Gas Giant ReflectX Grid <gasgiant>
+   Make a Model on Kaiju <makemodel>
