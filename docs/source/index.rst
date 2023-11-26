@@ -14,7 +14,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 1
    terrestrialgrid
    gasgiantgrid
    makemodel
