@@ -3,6 +3,9 @@
   :width: 500
   :align: center
 
+ReflectX
+========
+
 **ReflectX** is a suite of gas giant and terrestrial planet reflected light spectra generated from `PICASO <https://natashabatalha.github.io/picaso/>`_ for detecting and characterizing exoplanets in reflected light using `MagAO-X <https://xwcl.science/>`_ and `GMagAO-X <https://magao-x.org/gmagao-x/>`_.
 
 
@@ -17,5 +20,5 @@ Contents
    :maxdepth: 1
 
    The Terrestrial ReflectX Grid <terrestrialgrid>
-   The Gas Giant ReflectX Grid <gasgiant>
+   The Gas Giant ReflectX Grid <gasgiantgrid>
    Make a Model on Kaiju <makemodel>
