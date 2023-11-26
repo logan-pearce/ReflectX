@@ -14,6 +14,7 @@ Contents
 --------
 
 .. toctree::
+   :titlesonly:
    terrestrialgrid
    gasgiantgrid
    makemodel

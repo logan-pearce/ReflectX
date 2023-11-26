@@ -33,11 +33,12 @@ Sections
 
 Terrestrial models
 ^^^^^^^^^^^^^^^^^^
+.. note::
+    You must either set gravity or Mass/Radius. If setting gravity, a radius is also required to generate the planet spectrum If gravity is set to None, a mass is required.
 
 | ``TERRESTRIAL.PLANET.PARAMS``:
 | ``teq``: For the terrestrial models, the equilibrium temp set what clouds will condense, so we use the T_eq to set the clouds and the star-planet separation.
 | ``custom.pt.profile.dataframe``: option to input your own PT profile. Not operational yet. 
-| You must either set gravity or Mass/Radius. If setting gravity, a radius is also required to generate the planet spectrum If gravity is set to None, a mass is required.
 | ``gravity``: gravity, required if mass = `none`
 | ``gravity.unit`` must be `m/(s**2)`
 | ``radius``: Planet radius, required for all models
@@ -58,3 +59,36 @@ Terrestrial models
 
 Gas Giant models
 ^^^^^^^^^^^^^^^^^^
+.. note::
+    You must either set gravity or Mass/Radius. If setting gravity, a radius is also required to generate the planet spectrum If gravity is set to None, a mass is required.
+
+| ``GAS.GIANT.PLANET.PARAMS``:
+| ``custom.pt.profile.dataframe``: option to input your own PT profile. Not operational yet. 
+| ``gravity``: gravity, required if mass = `none`
+| ``gravity.unit`` must be `m/(s**2)`
+| ``radius``: Planet radius, required for all models
+| ``radius.unit``: must be Rearth, Rjup, or km
+| ``mass``: Mass (required if gravity = None)
+| ``mass.unit`` Must be Mjup or Mearth
+| ``tint``: internal temperature
+# Planet-Star separation (sets equilibrium temp)
+| ``separation``: For the gas giant models, the planet-star separation sets the equilibrium temperature which is used in the climat3e calculation
+| ``separation.unit``: must be `au` or `km`
+| ``log.metallicity``: planet metalicity. This parameter is used in the correlated-K opacity tables and must be one of: ``-1.0, -0.7, -0.5, -0.3, 0, 0.3, 0.5, 0.7, 1.0, 1.3, 1.5, 1.7, 2.0``, Which corresponds to: ``0.1, 0.2, 0.3, 0.5, 1, 2, 3, 5, 10, 20, 30, 50, 100`` times solar.
+| ``ctoo``: C/O ratio
+| ``tiovo``: Include TiVO in calculation? Either `yes` or `no`. ReflectX model grid did not use TiOVO.
+| ``path.to.correlated.k-coefficient.files``: location of correlated-K opactity files. On Kaiju you can use ``/srv/nas/users/virga/virga/reference/RefIndexFiles``
+| ``CLIMATE.CALCULATION.PARAMS``: parameters for climate calculation. The default parameters should be fine in most cases.
+| ``bottom.pressure``: log pressure for bottom of calculation. Default = 2
+| ``top.pressure``: log pressure for top of calculation. Defaul = -6
+| ``nlevel``: Number of plane-parallel layers for radiative transfer calculation.  Default = 91
+| ``nstr_upper``: Top most level of initial guessed convection zone. Default = 85
+| ``nstr_deep``: Bottom of initial guessed convection zone.  Default = nlevel - 2 = 89
+| ``nofczns``: number of initial convective zones. Default = 1
+| ``rfacv``: number parameterizing contribution of stellar flux.  Defaul = 0.5
+| ``GAS.GIANT.CLOUD.CONFIG``: Settings for cloud configuration.  See picaso documentation.
+| ``kzz``: Kzz controls the strength of vertical mixing - high value = more vigorous mixing
+| ``fsed``: fsed describes the sedimentation efficiency - higher value = more efficient = thin clouds with large particles, lower value = less efficient = vertically extended puffy clouds with small particles. Typical values 0.1 - 10 
+| ``mmw``: atm mean mol weight. Defaul = 2.2
+| ``meiff.directory``: Location of virga reference files. On Kaiju you can use ``/srv/nas/users/virga/virga/reference/RefIndexFiles``
+
