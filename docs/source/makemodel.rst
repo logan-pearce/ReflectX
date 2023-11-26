@@ -55,3 +55,6 @@ Terrestrial models
 | ``opd``: Total optical depth (tau) of each layer
 | ``p``: altitude of each layer in log10(pressure), Ex: 2 = 100 bars, -1 = 0.1 bars
 | ``dp``: height of each layer in log10(delta P) above given pressure layer. Ex: p = [2], dp = [3] would be a sinlge cloud layer starting at 100 bars and extending up to 0.1 bars. p=[2, -1], dp = [1, 1] would be two cloud layers, one at 100 bars extending up to 10 bars, and a second layer starting at 0.1 bars and extending up to 0.01 bars.
+
+Gas Giant models
+^^^^^^^^^^^^^^^^^^
