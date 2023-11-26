@@ -11,7 +11,7 @@ Example config files can be found at ``/srv/nas/users/loganpearce/config-gasgian
 
 Sections
 ~~~~~~~~
-The first three sections are common to both planet types.
+| The first three sections are common to both planet types.
 | ``MODEL.CONFIG``: Model configurations
 | ``modeltype``: Select 'Terrestrial' or 'GasGiant'. For the main grid, I used Terrestrial for anything less than about 10 Mearth.
 | ``opacity.db``: Path to the opacity database to use.  Don't change this. 
@@ -37,9 +37,7 @@ Terrestrial models
 | ``TERRESTRIAL.PLANET.PARAMS``:
 | ``teq``: For the terrestrial models, the equilibrium temp set what clouds will condense, so we use the T_eq to set the clouds and the star-planet separation.
 | ``custom.pt.profile.dataframe``: option to input your own PT profile. Not operational yet. 
-
-You must either set gravity or Mass/Radius. If setting gravity, a radius is also required to generate
-the planet spectrum. If gravity is set to None, a mass is required.
+| You must either set gravity or Mass/Radius. If setting gravity, a radius is also required to generate the planet spectrum If gravity is set to None, a mass is required.
 | ``gravity``: gravity, required if mass = `none`
 | ``gravity.unit`` must be `m/(s**2)`
 | ``radius``: Planet radius, required for all models
