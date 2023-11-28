@@ -1,4 +1,4 @@
-Make a single model on Kaiju
+Make a single model
 =====
 
 The MagAO-X lab computer Kaiju is set up to run a single model via a command line interface.
@@ -75,10 +75,10 @@ Gas Giant models
 | ``tint``: internal temperature
 | ``separation``: For the gas giant models, the planet-star separation sets the equilibrium temperature which is used in the climat3e calculation
 | ``separation.unit``: must be `au` or `km`
-| ``log.metallicity``: planet metalicity. This parameter is used in the correlated-K opacity tables and must be one of: ``-1.0, -0.7, -0.5, -0.3, 0, 0.3, 0.5, 0.7, 1.0, 1.3, 1.5, 1.7, 2.0``, Which corresponds to: ``0.1, 0.2, 0.3, 0.5, 1, 2, 3, 5, 10, 20, 30, 50, 100`` times solar.
+| ``log.metallicity``: planet metalicity. This parameter is used in the correlated-K opacity tables and must be one of: `-1.0, -0.7, -0.5, -0.3, 0, 0.3, 0.5, 0.7, 1.0, 1.3, 1.5, 1.7, 2.0`, Which corresponds to: `0.1, 0.2, 0.3, 0.5, 1, 2, 3, 5, 10, 20, 30, 50, 100` times solar.
 | ``ctoo``: C/O ratio
 | ``tiovo``: Include TiVO in calculation? Either `yes` or `no`. ReflectX model grid did not use TiOVO.
-| ``path.to.correlated.k-coefficient.files``: location of correlated-K opactity files. On Kaiju you can use ``/srv/nas/users/virga/virga/reference/RefIndexFiles``
+| ``path.to.correlated.k-coefficient.files``: location of correlated-K opactity files. On Kaiju you can use ``/srv/nas/users/loganpearce/virga/virga/reference/RefIndexFiles``
 
 | ``CLIMATE.CALCULATION.PARAMS``: parameters for climate calculation. The default parameters should be fine in most cases.
 | ``bottom.pressure``: log pressure for bottom of calculation. Default = 2
@@ -93,5 +93,64 @@ Gas Giant models
 | ``kzz``: Kzz controls the strength of vertical mixing - high value = more vigorous mixing
 | ``fsed``: fsed describes the sedimentation efficiency - higher value = more efficient = thin clouds with large particles, lower value = less efficient = vertically extended puffy clouds with small particles. Typical values 0.1 - 10 
 | ``mmw``: atm mean mol weight. Defaul = 2.2
-| ``meiff.directory``: Location of virga reference files. On Kaiju you can use ``/srv/nas/users/virga/virga/reference/RefIndexFiles``
+| ``meiff.directory``: Location of virga reference files. On XWCL computers you can use ``/srv/nas/users/loganpearce/virga/virga/reference/RefIndexFiles``
 
+Running a model on XWCL computers
+-------------------------------------
+
+Install dependencies
+^^^^^^^^^^^^^^^^^^^^
+
+Install python via (mini)conda following the instructions `here <https://magao-x.org/docs/handbook/compute/python.html>`_
+
+Create a new python 3.8 environment on whatever computer you're using (I used Kaiju)
+::
+    conda create -n "myenv" python=3.8
+
+Make sure you are set up on the `Network Attached Storage <https://magao-x.org/docs/handbook/compute/nas.html>`_ and that you can navigate to and view files in my directories at ``/srv/nas/users/loganpearce/`` (``Volumes/jrmales0/users/loganpearce`` from your local finder)
+
+
+
+Install Picaso
+^^^^^^^^^^^^^^
+
+The Picaso installation instructions are found `here <https://natashabatalha.github.io/picaso/installation.html>`_  
+*`BUT`* don't follow those explicity because there are a number of shortcuts we can take on the lab computers.
+
+First install the ``dev`` branch from GitHub::
+    $ git clone https://github.com/natashabatalha/picaso.git -b dev
+    $ cd picaso
+    $ pip install .
+
+Now we need to point picaso to the right reference files.  Rather than downloading the numerous and large reference files from the picaso installation instructions, you can just point your picaso version to the ref files I have stored on NAS
+Now open your ``.bashrc`` or ``.bash_profile``::
+    $ vi ~/.bashrc
+
+And add these lines::
+    export picaso_refdata="/srv/nas/users/loganpearce/picaso/reference/"
+    export PYSYN_CDBS="/srv/nas/users/loganpearce/picaso/reference/grp/redcat/trds"
+
+Source your bash file::
+    $ source ~/.bashrc
+
+And check that the changes are made::
+    $ echo $picaso_refdata
+    /srv/nas/users/loganpearce/picaso/reference/
+    $ cd $picaso_refdata
+    $ ls
+    base_cases chemistry config.json evolution opacities version.md
+
+Install Virga
+^^^^^^^^^^^^^^
+Virga is the cloud properties code that Picaso uses for cloudy spectra.
+
+Again the installation instructions can be found `here <https://natashabatalha.github.io/virga/installation.html>`_, but we are going to take some shortcuts.
+
+Again install the ``dev`` branch from GitHub::
+    $ git clone https://github.com/natashabatalha/virga.git -b dev
+    $ cd virga
+    $ pip install .
+
+Again we can skip downloading the reference files because we can point them on the NAS.
+
+Finally, launch a python session from the XWCL computer terminal and make sure you can import picaso and virga. You can even run through the `basic tutorial <https://natashabatalha.github.io/picaso/notebooks/1_GetStarted.html>`_` to make sure everything is working right.
