@@ -95,7 +95,7 @@ Gas Giant models
 | ``mmw``: atm mean mol weight. Defaul = 2.2
 | ``meiff.directory``: Location of virga reference files. On XWCL computers you can use ``/srv/nas/users/loganpearce/virga/virga/reference/RefIndexFiles``
 
-Running a model on XWCL computers
+Setup Picaso and Virga on XWCL computers
 -------------------------------------
 
 Install dependencies
@@ -105,9 +105,13 @@ Install python via (mini)conda following the instructions `here <https://magao-x
 
 Create a new python 3.8 environment on whatever computer you're using (I used Kaiju)
 ::
-    conda create -n "myenv" python=3.8
+    conda create -n py38 python=3.8
 
 Make sure you are set up on the `Network Attached Storage <https://magao-x.org/docs/handbook/compute/nas.html>`_ and that you can navigate to and view files in my directories at ``/srv/nas/users/loganpearce/`` (``Volumes/jrmales0/users/loganpearce`` from your local finder)
+
+Activate the environment
+::
+    conda activate py38
 
 
 
@@ -159,4 +163,24 @@ Again install the ``dev`` branch from GitHub
 
 Again we can skip downloading the reference files because we can point them on the NAS.
 
-Finally, launch a python session from the XWCL computer terminal and make sure you can import picaso and virga. You can even run through the `basic tutorial <https://natashabatalha.github.io/picaso/notebooks/1_GetStarted.html>`_` to make sure everything is working right.
+Finally, launch a python session from the XWCL computer terminal and make sure you can import picaso and virga. You can even run through the `basic tutorial <https://natashabatalha.github.io/picaso/notebooks/1_GetStarted.html>`_ to make sure everything is working right.
+
+
+Running a Model on XWCL computers
+-------------------------------------
+
+Copy the script and config file from my NAS directory to your directory on the lab computer.  There are two example config files in that directory, one set up for a gas giant planet and one for a terrestrial planet.  It doesn't matter which one you use.
+::
+    $ cp /srv/nas/users/loganpearce/MakeReflectXModel.py .
+    $ cp /srv/nas/users/loganpearce/config-gasgiant.ini .
+    $ cp /srv/nas/users/loganpearce/config-terrestrial.ini .
+
+Edit the config file for the model you want to make. Edit the output directory and name of the model (``directory.filename``).  Do not edit any of the reference file paths (``opacity.db``, ``path.to.correlated.k-coefficient.files``, ``meiff.directory``).  If you set it up correctly above then your script should point to the right places for needed reference files.
+
+Once the config file is set up you should be good to go!  Make sure you've activated the python environment and run the script as 
+::
+    $ python MakeReflectXModel.py config-file.ini
+
+
+Model Output and Evaluating Convergence
+-------------------------------------
