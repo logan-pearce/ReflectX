@@ -115,25 +115,30 @@ Install Picaso
 ^^^^^^^^^^^^^^
 
 The Picaso installation instructions are found `here <https://natashabatalha.github.io/picaso/installation.html>`_  
-*`BUT`* don't follow those explicity because there are a number of shortcuts we can take on the lab computers.
+*BUT* don't follow those explicity because there are a number of shortcuts we can take on the lab computers.
 
-First install the ``dev`` branch from GitHub::
+First install the ``dev`` branch from GitHub
+::
     $ git clone https://github.com/natashabatalha/picaso.git -b dev
     $ cd picaso
     $ pip install .
 
 Now we need to point picaso to the right reference files.  Rather than downloading the numerous and large reference files from the picaso installation instructions, you can just point your picaso version to the ref files I have stored on NAS
-Now open your ``.bashrc`` or ``.bash_profile``::
+Now open your ``.bashrc`` or ``.bash_profile``
+::
     $ vi ~/.bashrc
 
-And add these lines::
+And add these lines
+::
     export picaso_refdata="/srv/nas/users/loganpearce/picaso/reference/"
     export PYSYN_CDBS="/srv/nas/users/loganpearce/picaso/reference/grp/redcat/trds"
 
-Source your bash file::
+Source your bash file
+::
     $ source ~/.bashrc
 
-And check that the changes are made::
+And check that the changes are made
+::
     $ echo $picaso_refdata
     /srv/nas/users/loganpearce/picaso/reference/
     $ cd $picaso_refdata
@@ -146,7 +151,8 @@ Virga is the cloud properties code that Picaso uses for cloudy spectra.
 
 Again the installation instructions can be found `here <https://natashabatalha.github.io/virga/installation.html>`_, but we are going to take some shortcuts.
 
-Again install the ``dev`` branch from GitHub::
+Again install the ``dev`` branch from GitHub
+::
     $ git clone https://github.com/natashabatalha/virga.git -b dev
     $ cd virga
     $ pip install .
