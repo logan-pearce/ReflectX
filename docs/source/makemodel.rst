@@ -113,10 +113,8 @@ Activate the environment
 ::
     conda activate py38
 
-
-
 Install Picaso
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The Picaso installation instructions are found `here <https://natashabatalha.github.io/picaso/installation.html>`_  
 *BUT* don't follow those explicity because there are a number of shortcuts we can take on the lab computers.
@@ -150,7 +148,7 @@ And check that the changes are made
     base_cases chemistry config.json evolution opacities version.md
 
 Install Virga
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 Virga is the cloud properties code that Picaso uses for cloudy spectra.
 
 Again the installation instructions can be found `here <https://natashabatalha.github.io/virga/installation.html>`_, but we are going to take some shortcuts.
@@ -175,7 +173,7 @@ Copy the script and config file from my NAS directory to your directory on the l
     $ cp /srv/nas/users/loganpearce/config-gasgiant.ini .
     $ cp /srv/nas/users/loganpearce/config-terrestrial.ini .
 
-Edit the config file for the model you want to make. Edit the output directory and name of the model (``directory.filename``).  Do not edit any of the reference file paths (``opacity.db``, ``path.to.correlated.k-coefficient.files``, ``meiff.directory``).  If you set it up correctly above then your script should point to the right places for needed reference files.
+Or you can download them `here. <https://github.com/logan-pearce/ReflectX/tree/main/ReflectX/MakeSingleReflectXModel>`_ Edit the config file for the model you want to make. Edit the output directory and name of the model (``directory.filename``).  Do not edit any of the reference file paths (``opacity.db``, ``path.to.correlated.k-coefficient.files``, ``meiff.directory``).  If you set it up correctly above then your script should point to the right places for needed reference files.
 
 Once the config file is set up you should be good to go!  Make sure you've activated the python environment and run the script as 
 ::
