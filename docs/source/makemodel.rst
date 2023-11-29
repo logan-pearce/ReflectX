@@ -187,10 +187,10 @@ Model Output
 ------------
 ``MakeReflectXModel.py`` makes a new directory within the ``output.directory`` that is called ``directory.filename`` from your config file. Within the directory are four files.
 
-* ``config.ini``: The config file you made is copied into the model directory so that the input parameters are easy to reference.
-* ``model.pkl``: A pickle file of the Picaso model which can be read into future scripts and manipulated as Picaso jdi object.
-* ``PTprofile.png``: A plot of the model's pressure-temperature profile over condensation curves for all the species in Virga. Where the PT profile crosses the condensation curves is where and what type of clouds can condense. For gas giant models, you should use this plot to assess if your model converged correctly (see below).
-* ``ReflectX_spectra.csv``: A csv file of the resulting spectra. The columns are: 
+#. ``config.ini``: The config file you made is copied into the model directory so that the input parameters are easy to reference.
+#. ``model.pkl``: A pickle file of the Picaso model which can be read into future scripts and manipulated as Picaso jdi object.
+#. ``PTprofile.png``: A plot of the model's pressure-temperature profile over condensation curves for all the species in Virga. Where the PT profile crosses the condensation curves is where and what type of clouds can condense. For gas giant models, you should use this plot to assess if your model converged correctly (see below).
+#. ``ReflectX_spectra.csv``: A csv file of the resulting spectra. The columns are
     #. ``wavelength [um]``: wavelength in microns
     #. ``StarFlux``: stellar flux spectrum in ergs cm$^{-2}$ s$^{-1}$ cm$^{-1}$ 
     #. ``cloud-free-albedo``: albedo spectrum for cloud free model
