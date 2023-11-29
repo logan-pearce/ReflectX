@@ -21,4 +21,4 @@ Contents
 
    The Terrestrial ReflectX Grid <terrestrialgrid>
    The Gas Giant ReflectX Grid <gasgiantgrid>
-   Make a Model on Kaiju <makemodel>
+   Make a Single Model <makemodel>
