@@ -62,3 +62,6 @@ Each of the nine spectrum dataframe files contains columns:
   * Cloud-free planet flux spectrum in ergs cm^-2 s^-1 cm^-1 for all 5 planet radii/mass
   * Cloudy planet - star flux ratio (called ``fpfs``) for all 5 planet radii/mass
   * Cloudy planet flux spectrum in ergs cm^-2 s^-1 cm^-1 for all 5 planet radii/mass
+
+
+We model the clouds as a single layer of a grey opacity source from P = 100 - 0.1 bars. 
