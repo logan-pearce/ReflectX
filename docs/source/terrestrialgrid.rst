@@ -35,7 +35,7 @@ This figure shows some PT Profiles within the above ranges overplotted with the 
   * Four concentrations for other molecules in the atmosphere: H2O, CO2, CH4, O2, CO, O3. For each planet type, every other molecule is set to the selected concentration and the dominant molecule concentration is set to 1 - sum(num_other_molecules * concentration)
   * Five phase angles, with 0 deg being full phase, 90 deg being quadrature, and 180 deg being new phase. Above phase ~ 140 deg there is negligible flux reflected towards the observer.  Full phase is not observationally possible but we include it for reference.
 
-This produces 765 base models, which define the cloudy and cloud-free albedo spectra. There is one directory for each base model wich contains the following permutations.
+This produces 765 base models, which define the cloudy and cloud-free albedo spectra. There is one directory for each base model which contains the following permutations.
 
   * There are 6 star types:
       * Mid M dwarf: Teff = 3000 K, R = 0.2 Rsun, log(g) = 5 m/s
