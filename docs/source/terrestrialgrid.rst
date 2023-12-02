@@ -15,10 +15,10 @@ The ReflectX Terrestrial Grid is a grid of reflected light spectra spanning a ra
 The base grid is defined by permutations of:
   
   * Four planet types which sets what the dominant molecule in the atmosphere is and the surface albedo:
-     * Water world: H2O dominant atmosphere, surface albedo = 0.6, same as Earth's open oceans
-     * Venus-like world: CO2 dominant atm, surface albedo = `0.1 <https://iopscience.iop.org/article/10.3847/1538-4357/ab9cba>`_
-     * Earth-like world: N2 dominant atm, surface albedo = 0.2
-     * Titan-like world: CH4 dominant atm, surface albedo = `0.2 <https://www.sciencedirect.com/science/article/pii/S003206330600136X>`_
+      * Water world: H2O dominant atmosphere, surface albedo = 0.6, same as Earth's open oceans
+      * Venus-like world: CO2 dominant atm, surface albedo = `0.1 <https://iopscience.iop.org/article/10.3847/1538-4357/ab9cba>`_
+      * Earth-like world: N2 dominant atm, surface albedo = 0.2
+      * Titan-like world: CH4 dominant atm, surface albedo = `0.2 <https://www.sciencedirect.com/science/article/pii/S003206330600136X>`_
   * Four cloud compositions which is set by the equilibrium temperature, which sets the pressure-temperature (PT) profile (`Guillot 2010 <https://ui.adsabs.harvard.edu/abs/2010A%26A...520A..27G/abstract>`_, `Line et al. 2013 <https://ui.adsabs.harvard.edu/abs/2013ApJ...778..183L/abstract>`_), and determines which molecules condense into clouds. 
     * Teq = 80 - 140 K: NH3 clouds
     * Teq = 170 - 270 K: H2O clouds
