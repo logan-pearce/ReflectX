@@ -205,3 +205,13 @@ Model Output
 
 Evaluating Convergence
 -------------------------------------
+
+
+Troubleshooting
+---------------
+
+* You recieved this error message:
+::
+    Exception: You have not downloaded the PICASO reference data. You can find it on github here: https://github.com/natashabatalha/picaso/tree/master/reference . If you think you have already downloaded it then you likely just need to set your environment variable. See instructions here: https://natashabatalha.github.io/picaso/installation.html#download-and-link-reference-documentation . You can use `os.environ['PYSYN_CDBS']=<yourpath>` directly in python if you run the line of code before you import PICASO.
+
+You have not pointed your config file to the correct reference files, or you have not added the path to your bash profile. Refer to the top of this page, or for more info go to the Picaso docs `here <https://natashabatalha.github.io/picaso/installation.html>`_ and `here <https://natashabatalha.github.io/picaso/notebooks/FAQs.html#I'm-confused-about-what-opacity-file-to-use>`_
