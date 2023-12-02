@@ -32,9 +32,9 @@ The base Gas Giant grid is defined by permutations of:
 .. note::
   Not all base models will contain all five separations, in cases where the planet was too hot or too cold for the PT profile to converge correctly the models have been omitted
 
-  * Two Carbon to Oxygen ratios, 0.5 and 1.5, which influences molecular mixing ratios (see `Madhusudhan 2021 <https://iopscience.iop.org/article/10.1088/0004-637X/758/1/36>`_)
+* Two Carbon to Oxygen ratios, 0.5 and 1.5, which influences molecular mixing ratios (see `Madhusudhan 2021 <https://iopscience.iop.org/article/10.1088/0004-637X/758/1/36>`_)
 
-  * Five phase angles, with 0 deg being full phase, 90 deg being quadrature, and 180 deg being new phase. Above phase ~ 140 deg there is negligible flux reflected towards the observer.  Full phase is not observationally possible but we include it for reference.
+* Five phase angles, with 0 deg being full phase, 90 deg being quadrature, and 180 deg being new phase. Above phase ~ 140 deg there is negligible flux reflected towards the observer.  Full phase is not observationally possible but we include it for reference.
 
 This produces 1250 cloud-free base models. There is one directory for each base model which also contains cloudy models based on the following cloud parameter permutations:
 
