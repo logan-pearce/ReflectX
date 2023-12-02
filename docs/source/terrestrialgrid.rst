@@ -5,6 +5,8 @@ ReflectX Terrestrial Grid
   :width: 900
   :align: center
 
+
+
 .. note::
   The basics of reflected light with Picaso can be found `here <https://natashabatalha.github.io/picaso/tutorials.html#basics-of-reflected-light>`_
 
@@ -17,7 +19,6 @@ The base grid is defined by permutations of:
   #. Venus-like world: CO2 dominant atm, surface albedo = `0.1 <https://iopscience.iop.org/article/10.3847/1538-4357/ab9cba>`_
   #. Earth-like world: N2 dominant atm, surface albedo = 0.2
   #. Titan-like world: CH4 dominant atm, surface albedo = `0.2 <https://www.sciencedirect.com/science/article/pii/S003206330600136X>`_
-
 * Then there are four cloud compositions which is set by the equilibrium temperature, which sets the pressure-temperature (PT) profile (`Guillot 2010 <https://ui.adsabs.harvard.edu/abs/2010A%26A...520A..27G/abstract>`_, `Line et al. 2013 <https://ui.adsabs.harvard.edu/abs/2013ApJ...778..183L/abstract>`_), and determines which molecules condense into clouds. 
   #. Teq = 80 - 140 K: NH3 clouds
   #. Teq = 170 - 270 K: H2O clouds
@@ -30,7 +31,7 @@ This figure shows some PT Profiles within the above ranges overplotted with the 
   :width: 500
   :align: center
 
-* There are three gravties, which captures internal composition and informs the mass/radius relationship.
+* There are three gravities, which captures internal composition and informs the mass/radius relationship.
 
 * Four concentrations for other molecules in the atmosphere: H2O, CO2, CH4, O2, CO, O3. For each planet type, every other molecule is set to the selected concentration and the dominant molecule concentration is set to 1 - sum(num_other_molecules * concentration)
 
