@@ -217,7 +217,7 @@ For the Gas Giant models, Picaso iteratively solves the PT profile for given mod
   :width: 500
   :align: center
 
-This is an example of a badly converge profile.  At the bottom, between 10^1 and 10^2 bars, there is a sharp bend in the profile and it is not smooth.  For the configuration the bottom of the model atm had been set to 10^2, and it did not converge well down there (a lot of the time 10^2 is fine for the bottom, but sometimes this kink happens).  So I change the bottom of the atm to 10^3, and the resulting PT profile looks smooth and good to go:
+This is an example of a badly converge profile.  At the bottom, between 10^1 and 10^2 bars, there is a sharp bend in the profile and it is not smooth.  For the configuration the bottom of the model atm had been set to 10^2, and it did not converge well down there (a lot of the time 10^2 is fine for the bottom, but sometimes this kink happens).  So I change the bottom of the atm to 10^3 (``bottom.pressure`` = 3 in the config file), and the resulting PT profile looks smooth and good to go:
 
 .. image:: images/PTprofile-goodconv.png
   :width: 500
