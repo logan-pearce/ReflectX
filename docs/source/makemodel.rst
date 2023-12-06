@@ -118,6 +118,11 @@ Sections
 | ``phase``: angle in degrees.  Angles larger than about 140 deg will return little to no flux.
 | ``ntangle``, ``ngangle``: For non-zero phase angles, select the number of vertical and horizonal computational points to use. More points =  longer compute time. Recommend don't change these.
 
+.. image:: images/phases.png
+  :width: 800
+  :align: center
+*The effect of increasing phase angle on amount of reflected light. From* `Picaso Docs <https://natashabatalha.github.io/picaso/>`_
+
 Terrestrial models
 ^^^^^^^^^^^^^^^^^^
 .. note::
@@ -200,17 +205,32 @@ Model Output
     #. ``cloudy-fpfs``: Planet-Star flux ratio (contrast) cloudy spectrum
     #. ``cloudy-PlanetFlux``: cloudy planet flux spectrum in ergs cm$^{-2}$ s$^{-1}$ cm$^{-1}$ 
 
-
+.. note::
+    These models take a long time to run, especially the gas giant models.  While Picaso is iteratively solving the PT profile there is a lot of terminal output.  The spectra take a long time and a lot of memory to compute because the opacity databases are very large files.
 
 
 Evaluating Convergence
 -------------------------------------
+For the Gas Giant models, Picaso iteratively solves the PT profile for given model setup, so it necessary to check that your resulting PT profile has converged correctly.  ``MakeReflectXModel.py`` saves a plot of your PT profile, along with Virga molcular condensation curves, to help asses the result of your model.
+
+.. image:: images/PTprofile-badconv.png
+  :width: 500
+  :align: center
+
+This is an example of a badly converge profile.  At the bottom, between 10^1 and 10^2 bars, there is a sharp bend in the profile and it is not smooth.  For the configuration the bottom of the model atm had been set to 10^2, and it did not converge well down there (a lot of the time 10^2 is fine for the bottom, but sometimes this kink happens).  So I change the bottom of the atm to 10^3, and the resulting PT profile looks smooth and good to go:
+
+.. image:: images/PTprofile-goodconv.png
+  :width: 500
+  :align: center
+
+
 
 
 Troubleshooting
 ---------------
 
 * You recieved this error message:
+
 ::
     Exception: You have not downloaded the PICASO reference data. You can find it on github here: https://github.com/natashabatalha/picaso/tree/master/reference . If you think you have already downloaded it then you likely just need to set your environment variable. See instructions here: https://natashabatalha.github.io/picaso/installation.html#download-and-link-reference-documentation . You can use `os.environ['PYSYN_CDBS']=<yourpath>` directly in python if you run the line of code before you import PICASO.
 
