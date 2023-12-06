@@ -15,14 +15,17 @@ The ReflectX Gas Giant Grid is a grid of reflected light spectra spanning a rang
 The base Gas Giant grid is defined by permutations of:
 
 * Five planet types which sets the mass, radius, and metallicity. Mass/radius were estimated from `this plot <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_ and metallicity was estimated using `this plot <https://stellarplanet.org/science/mass-metallicity/>`_
+
     * Neptune-like: R = 0.35 Rjup, M = 0.05 Mjup, Metallicity = 100 x solar
     * Super Neptune: R = 0.54 Rjup, M = 0.09 Mjup, Metallicty = 50 x solar
     * Saturn-like: R = 0.8 Rjup, M = 0.3 Mjup, Metallicity = 10 x solar
     * Jupiter-like: R = 1 Rjup, M = 1 Mjup, Metallicity = 3 x solar
-    * SUper Jupiter: R = 0.9 Rjup, M = 5 Mjup, Metallicity = 1 x solar
+    * Super Jupiter: R = 0.9 Rjup, M = 5 Mjup, Metallicity = 1 x solar
+    
 * Five stars:
 
 * Five star-planet separations:
+
     * 0.1 au
     * 0.5 au
     * 1 au
@@ -43,6 +46,7 @@ This produces 1250 cloud-free base models. There is one directory for each base 
 * Two values of K_zz -- 1x10^9 and 1x10^11 -- which describes the strength of vertical mixing.  Larger value = more vigorous mixing. See `Mukherjee et al. 2022 <https://ui.adsabs.harvard.edu/abs/2022ApJ...938..107M/abstract>`_
 
 Within each base model directory is a spectrum dataframe with these columns:
+
   * Wavelength 0.4 - 2 microns
   * Stellar flux spectrum from the phoenix model in ergs cm^-2 s^-1 cm^-1
   * Cloud-free albedo spectrum
