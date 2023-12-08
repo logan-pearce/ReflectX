@@ -1,5 +1,5 @@
 Modeling Proxima Centauri b with ReflectX and Picaso/Virga
-=====
+==========================================================
 
 Can we distinguish Proxima Centauri b atmosphere cases with ELTs like GMT/GMagAO-X?
 
@@ -57,6 +57,6 @@ The first case is a planet with no atmosphere at all.  In this case, we will sim
 Since Prox Cen b is an RV detected planet, the orbital inclination is unconstrained.  The value of orbital inclination will affect the true mass of the planet, and consequently the radius, and also the phase angle as a function of orbit phase.
 
 .. image:: images/Phase-vs-orbit-phase.png
-    :width: 50 %
+   :width: 50 %
 .. image:: images/Phase-vs-incl-for-four-incs.png
-    :width: 50 %
+   :width: 50 %
