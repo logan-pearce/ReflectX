@@ -22,3 +22,4 @@ Contents
    The Terrestrial ReflectX Grid <terrestrialgrid>
    The Gas Giant ReflectX Grid <gasgiantgrid>
    Make a Single Model <makemodel>
+   Modeling Proxima Centauri b <ProxCenb-models>
