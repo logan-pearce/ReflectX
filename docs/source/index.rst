@@ -23,3 +23,4 @@ Contents
    The Gas Giant ReflectX Grid <gasgiantgrid>
    Make a Single Model <makemodel>
    Modeling Proxima Centauri b <ProxCenb-models>
+   Reproducing Earth Spectrum in Virga <modelingearth>
