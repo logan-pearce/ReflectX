@@ -116,3 +116,5 @@ Higher f_sed seems to fit the absorption feature depth and shape well, but that 
 .. image:: images/EarthH2Oclouds-refl-comptoFeng2018-albedos-fsed10-mmw2.2-kzz1e10-mmr1.8e3-teq245-bkgH2.png
   :width: 800
   :align: center
+
+Computation times invovled in computing the model made an MCMC exploration of parameter space prohibitive.
