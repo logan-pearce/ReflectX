@@ -116,3 +116,6 @@ Putting these on a CMD for three different phases spanning the parameter space:
    :width: 100 %
 
 
+GJ 876 c
+---------
+In progress
