@@ -1,5 +1,5 @@
 ReflectX Gas Giant Grid
-=====
+=======================
 
 .. image:: images/ReflectX-GasGaint-Model.drawio.png
   :width: 900
@@ -14,7 +14,7 @@ The ReflectX Gas Giant Grid is a grid of reflected light spectra spanning a rang
 
 The base Gas Giant grid is defined by permutations of:
 
-* Five planet types which sets the mass, radius, and metallicity. Mass/radius were estimated from `this plot <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_ and metallicity was estimated using `this plot <https://stellarplanet.org/science/mass-metallicity/>`_
+* Five planet types which sets the mass, radius, and metallicity. Mass/radius were estimated from `an emperical planet mass-radius relation <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_ and metallicity was estimated using `an emperical mass-metallicity relation <https://stellarplanet.org/science/mass-metallicity/>`_
 
     * Neptune-like: R = 0.35 Rjup, M = 0.05 Mjup, Metallicity = 100 x solar
     * Super Neptune: R = 0.54 Rjup, M = 0.09 Mjup, Metallicty = 50 x solar

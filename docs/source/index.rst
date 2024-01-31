@@ -19,8 +19,12 @@ Contents
 .. toctree::
    :maxdepth: 1
 
+   Modeling Proxima Centauri b <ProxCenb-models>
+   Modeling GJ 876 b <GJ876bc-models>
+   Reproducing Earth Spectrum in Virga <modelingearth>
+..
    The Terrestrial ReflectX Grid <terrestrialgrid>
    The Gas Giant ReflectX Grid <gasgiantgrid>
    Make a Single Model <makemodel>
-   Modeling Proxima Centauri b <ProxCenb-models>
-   Reproducing Earth Spectrum in Virga <modelingearth>
+
+   

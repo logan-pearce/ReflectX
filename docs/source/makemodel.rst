@@ -1,11 +1,11 @@
 Make a single model
-=====
+===================
 
 How to run a single ReflectX model via a command line interface.
 
 
 Setup Picaso and Virga on XWCL computers
--------------------------------------
+----------------------------------------
 
 Install dependencies
 ^^^^^^^^^^^^^^^^^^^^
@@ -76,7 +76,7 @@ Finally, launch a python session from the XWCL computer terminal and make sure y
 
 
 Running a Model on XWCL computers
--------------------------------------
+---------------------------------
 
 Copy the script and config file from my NAS directory to your directory on the lab computer.  There are two example config files in that directory, one set up for a gas giant planet and one for a terrestrial planet.  It doesn't matter which one you use.
 ::
@@ -84,7 +84,7 @@ Copy the script and config file from my NAS directory to your directory on the l
     $ cp /srv/nas/users/loganpearce/config-gasgiant.ini .
     $ cp /srv/nas/users/loganpearce/config-terrestrial.ini .
 
-Or you can download them `here. <https://github.com/logan-pearce/ReflectX/tree/main/ReflectX/MakeSingleReflectXModel>`_ Edit the config file for the model you want to make (see below). Edit the output directory and name of the model (``directory.filename``).  Do not edit any of the reference file paths (``opacity.db``, ``path.to.correlated.k-coefficient.files``, ``meiff.directory``).  If you set it up correctly above then your script should point to the right places for needed reference files.
+Or you can download them `from GitHub. <https://github.com/logan-pearce/ReflectX/tree/main/ReflectX/MakeSingleReflectXModel>`_ Edit the config file for the model you want to make (see below). Edit the output directory and name of the model (``directory.filename``).  Do not edit any of the reference file paths (``opacity.db``, ``path.to.correlated.k-coefficient.files``, ``meiff.directory``).  If you set it up correctly above then your script should point to the right places for needed reference files.
 
 Once the config file is set up you should be good to go!  Make sure you've activated the python environment and run the script as 
 ::
@@ -97,7 +97,7 @@ ReflectX Command Line Tool takes in a config file that sets up the model paramet
 Example config files can be found at ``/srv/nas/users/loganpearce/config-gasgiant.ini`` and ``/srv/nas/users/loganpearce/config-terrestrial.ini``.  Both files contain parameters for terrestrial or gas giant models but have each been configured for one of the model types.  If ``model.type`` is set to 'Terrestrial', then gas giant parameters will be ignored, and vice versa.
 
 Sections
-~~~~~~~~
+^^^^^^^^
 | The first three sections are common to both planet types.
 | ``MODEL.CONFIG``: Model configurations
 | ``modeltype``: Select 'Terrestrial' or 'GasGiant'. For the main grid, I used Terrestrial for anything less than about 10 Mearth.
@@ -122,6 +122,8 @@ Sections
   :width: 800
   :align: center
 *The effect of increasing phase angle on amount of reflected light. From* `Picaso Docs <https://natashabatalha.github.io/picaso/>`_
+
+
 
 Terrestrial models
 ^^^^^^^^^^^^^^^^^^

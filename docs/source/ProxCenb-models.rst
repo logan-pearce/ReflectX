@@ -35,11 +35,14 @@ Known Prox Cen/ Prox Cen b parameters:
    * - Star SpT
      - M5.5V
      - Faria et al. 2022
+   * - Star log(Luminosity)
+     - -2.8 +0.1/-0.2
+     - Faria et al. 2022
    * - log(g)
      - 5.2 cm s^-2
      - Faria et al. 2022
    * - metallicity
-     - 0.2 x solar
+     - 0.21 dex
      - Schlaufman and Laughlin 2012
     
 
@@ -63,7 +66,7 @@ Since Prox Cen b is an RV detected planet, the orbital inclination is unconstrai
 
 The figure on the left shows the observer's phase angle as a function of orbital phase (expressed in degrees, where 0 degrees is the inferior conjunction and 360 degrees is one complete orbit) as a function of five values of orbital inclinations.
 
-Each inclination will correspond to a different true mass of the planet and thus different radius.  We computed mass/radius for four inclinations: 10, 45, 60, 80 degrees, which corresponds to mass 6.2, 1.5, 1.2, and 1.0 Earth masses respectfully.  To estimate radius we used an `emperical mass-radius relation <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_, which gives radii 2.1, 1.14, 1.07, and 1.02 respectfully.
+Each inclination will correspond to a different true mass of the planet and thus different radius.  We computed mass/radius for a range of inclinations.  To estimate radius we used an `emperical mass-radius relation <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_.
 
 .. list-table::
    :header-rows: 1
@@ -74,12 +77,21 @@ Each inclination will correspond to a different true mass of the planet and thus
    * - 10 
      - 6.2
      - 2.1
+   * - 20
+     - 3.1
+     - 1.46
+   * - 30
+     - 2.1
+     - 1.30
    * - 45
      - 1.5
-     - 1.14
+     - 1.15
    * - 60
      - 1.2
      - 1.07
+   * - 70
+     - 1.1
+     - 1.04
    * - 80
      - 1.0
      - 1.0
