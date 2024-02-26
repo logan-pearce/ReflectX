@@ -184,38 +184,82 @@ This figure shows GJ 876 c models for C/O = 1.0 in J and H-i space for three pha
 .. image:: images/GJ876c-cto1.0-contrast-vs-clouds-CMD-3phases.png
    :width: 100 %
 
-This is also seen in phase curves.
+This is also seen in phase curves:
 
 .. image:: images/GJ876c-r-cto1.0-phase-curve.png
-   :width: 45 %
+   :width: 100 %
 .. image:: images/GJ876c-z-cto1.0-phase-curve.png
-   :width: 45 %
+   :width: 100 %
 
-In z band we see the kzz=1e11/fsed=1 cloud model getting brighter at higher phases, even brighter than at full phase.  The kzz=1e9/fsed=6 case also shows a sharp bend at phase=110 deg.
+In z band we see the kzz=1e11/fsed=1 cloud model getting brighter at higher phases, even brighter than at full phase.  The kzz=1e9/fsed=6 case also shows a sharp bend at phase=110 deg.  **Why do we see these features?**
+
+**Effect of separation on results for the eccentric orbit:**
+
 
 As described above, the eccentric orbit coupled with the relatively close semi-major axis means the separation wrt the star changes significantly throughout the orbit.  This figure shows the phase along the orbit as viewed in the orbit plane, with the separation at four phases marked in orange.
 
 .. image:: images/GJ876c-Model-phase-sampling-PhysicalSepvsTime-4phases-marked.png
    :width: 100 %
 
-We see that the closest points of the orbit correspond to larger viewing phase angles for the observer, so there is a trade off in reflected light flux between decreasing flux due to phase and increasing contrast with closer separation (contrast :math:`\propto 1/r^2`) and hotter atm/clouds.
+We see that the closest points of the orbit correspond to larger (more crescent) viewing phase angles for the observer, so there is a trade off in reflected light flux between decreasing flux due to phase and increasing contrast with closer separation (contrast :math:`\propto 1/r^2`) and hotter atm/clouds.
 
-In the figure below we show the contrast for a Lambertian sphere (uniform albedo spaitially and spectrally) with albedo = 0.3 for a planet/star of the same mass/radius as GJ 876 c, with semi-major axis = 0.5 au and eccentricity = 0.3.  We computed contrast using Eqn 1 in Cahoy et al. 2010:
+The contrast for a Lambertian sphere (uniform albedo spaitially and spectrally) is given by Eqn 1 in Cahoy et al. 2010:
 
 .. math::
 
    C =  A_{g} \left(\frac{R_{p}}{r} \right)^{2} \; [\sin{\alpha} + (\pi - \alpha) \cos{\alpha}]\frac{1}{\pi}
 
-where :math:`A_{g}` is the geometric albedo, :math:`R_{p}` is the planet radius, :math:`r` is the separation in the orbit plane, and :math:`\alpha` is the phase.  
-
-The phase term is of order :math:`10^{0}` while the :math:`\left(\frac{R_{p}}{r} \right)^{2}` term is of order :math:`10^{6}`, so even though contrast goes as :math:`\left(\frac{1}{r} \right)^{2}`, the phase term has a greater effect on the contrast. In this figure we show the contrast as a function of phase for a constant separation (r = 0.5 au; blue line), contrast as a function of separation for a constant phase (phase = 90 deg; red line), and contrast as a function of phase and separation if minimum separation corresponded to maximum (faintest) phase as we have for GJ 876 c (yellow dashed line).  We see that the phase has a much larger effect on contrast than the 1/r squared relation in the ranges we are interested in.  
+where :math:`A_{g}` is the geometric albedo, :math:`R_{p}` is the planet radius, :math:`r` is the separation in the orbit plane, and :math:`\alpha` is the phase.  The phase term is of order :math:`10^{0}` while the :math:`\left(\frac{R_{p}}{r} \right)^{2}` term is of order :math:`10^{-6}`, so even though contrast goes as :math:`\left(\frac{1}{r} \right)^{2}`, the phase term has a greater effect on the observed contrast in the ranges we are interested in and the separation effect is negligble when considering simply the Lambertian contrast.  
 
 
-.. image:: images/Phase-vs-separation-affect-on-contrast.png
-   :width: 100 %
-
-However the higher stellar flux at closer separations does impact the model climate solution and cloud behavior. In the plot below we show the pressure-temperature profile for models with C/O = 1.0 and at phases 60, 120, and 140 deg. The higher phase angles are closer to the star; 140 deg is at ~0.10 au, 120 deg at ~0.15 au, and 60 deg is at ~0.17 au.  The PT profiles are plotted over the condensation curves for various molecular species.  The inset shows the region wherre the PT profiles cross the curves of interest. We see that the hotter, more crescent phases cross the S8 (sulfer haze) curve at higher altitudes enabling taller, thicker haze clouds, and that hotter models don't cross the water curve at all.
+However the higher stellar flux at closer separations does impact the model climate solution and cloud behavior. In the plot below we show the pressure-temperature profile for models with C/O = 1.0 and at phases 60, 120, and 140 deg. The higher phase angles are closer to the star; 140 deg is at ~0.10 au, 120 deg at ~0.15 au, and 60 deg is at ~0.17 au.  Below we show the PT profiles from the Picaso climate solution plotted over the condensation curves for various molecular species.  The inset shows the region where the PT profiles cross the curves of interest. We see that the hotter, more crescent phases cross the S8 (sulfer haze) curve at higher altitudes enabling taller, thicker haze clouds, and that hotter models don't cross the water curve at all.
 
 .. image:: images/GJ876c-ecc025-PTprofiles.png
    :width: 100 %
 
+The plot below shows the orbit as above.  Points within the purple region are too hot for water clouds to condense in these models.
+
+.. image:: images/GJ876c-Model-phase-sampling-PhysicalSepvsTime-4phases-marked-whereH2Ocondensemarked.png
+   :width: 100 %
+
+
+**So why do some models increase in brightness as they decrease in illuminated area (increase viewing phase)?**
+
+The plot below shows spectra for two cloud conditions and four different phases.  All models have f_sed = 1, and the case for k_zz = 1e11 and 1e9 are presented.  The f_sed = 1/k_zz = 1e11 case (blue) corresponds to the pink triangle curve in phase curve plots, which shows a dramatic brightening at higher phases, especially for redder passbands; the f_sed = 1/k_zz = 1e9 case (red) corresponds to the pink circle curve and does not show this behavior.
+
+On the right we show the contrast as a function of wavelength for all models, with the filter curved used in this analysis shown below in grey.  Fainter colors correspond to higher phase angles.  Phases :math:`<` 115 deg are within the region where water can condense while phases :math:`>` 115 deg are too hot for wzter clouds.  On the left we show the cloud optical depth (tau) as a function of altitude (parameterized by pressure) for the same models.  For the f_sed = 1/k_zz = 1e11 case (blue), which includes vigorous vertical mixing, the sulfer cloud optical depth increases for the hotter models.  Looking at the spectra, the hotter models are more reflective due to the thicker clouds, especially in redder passbands.  We observe the  opposite behavior for the k_zz = 1e9 case (red; less vigorous vertical mixing) where the cloud opacity and vetical thickness decreases for hotter models; colder models are more reflective for this case.  The effect of the cloud optical depth explains the phase curve for these models.
+
+.. image:: images/GJ876c-spectra-fsed1-wOPD.png
+   :width: 100 %
+
+The plot below shows the same parameters for f_sed = 6 (the higher f_sed corresponds to thinner clouds compared to the above plot with f_sed =1).  Here the effect of H2O clouds is clear.  For models with phases :math:`<` 115 deg water cloud condense between :math:`10^{0}` and :math:`10^{-1}` bars.  For hotter models with phases :math:`>` 115 deg the water clouds are absent and the overall cloud optical depth decreases, causing the jump seen in the phase curve for k_zz = 1e9 (orange circle curve).  
+
+.. image:: images/GJ876c-spectra-fsed6-wOPD.png
+   :width: 100 %
+
+But why is that jump not seen in the phase curve for the k_zz = 1e11 case?  As seen in the above plot, cloud optical depth for the more vigorous mixing case is significantly less than the k_zz = 1e11 case here.
+
+The plot below show the opacity sources responsible for photo attenuation in these models: gas opacity (blue), cloud opacity (teal), and Rayleigh opacity (green).  The highest altitude (lowest pressure) source at any given wavelength is the dominant source in that region.  The top two plots show the f_sed = 6/k_zz = 1e9 models for the cooler (left; H2O+S8 clouds) and hotter (right; S8 clouds only).  For the H2O+S8 cloud models the clouds dominate in bluest wavelengths, and decrease in dominance as the H2O clouds are removed.
+
+.. image:: images/GJ876c-photo-attenuation-fsed6-kzz1e9-phase40.png
+   :width: 49 %
+.. image:: images/GJ876c-photo-attenuation-fsed6-kzz1e9-phase140.png
+   :width: 49 %
+
+For the k_zz = 1e11 case however, the clouds are so small and optically thin that they do not contribute to photon attenuation at all.  The spectrum is dominated by gas opacity everywhere except blueward of 0.5 um where Rayleigh dominates (seen as a decrease in contrast in that region in the above spectrum).  The removal of the H2O clouds makes no difference. These models match the cloud-free models in all meaningful respects.  **We will not be able to distinguish this cloud condition from the cloud-free condition.**
+
+.. image:: images/GJ876c-photo-attenuation-fsed6-kzz1e11-phase40.png
+   :width: 49 %
+.. image:: images/GJ876c-photo-attenuation-fsed6-kzz1e11-phase140.png
+   :width: 49 %
+
+
+Conclusion
+~~~~~~~~~~
+
+Returning to the color-magnitude diagram:
+
+.. image:: images/GJ876c-cto1.0-contrast-vs-clouds-CMD-3phases.png
+   :width: 100 %
+
+Broadband colors have signficiant constraining power for cloud properties when measured at multiple places along the orbit, particularly for the eccentric orbit, and for mid-range cloud sedimentation.  Especially for detection of cloud composition variablity during an orbit.
