@@ -44,17 +44,11 @@ Known Prox Cen/ Prox Cen b parameters:
    * - metallicity
      - 0.21 dex
      - Schlaufman and Laughlin 2012
+   * - Distance
+     - 1.30119 +0.00034/-0.00035 pc
+     - 
     
 
-
-No Atmosphere Models
--------------------
-
-The first case is an airless rocky planet.  In this case, we will simply observe the star's spectrum reflecting from the surface, with a planet-star contrast determined by the albedo of the planet's surface composition. We used Eqn 1 from Cahoy et al. 2010 for the contrast of a given Lambertian sphere with albedo :math:`A_g` , radius :math:`R_p` , separation :math:`\rho` , and phase angle :math:`\alpha` 
-
-.. math::
-
-   C(\alpha) = A_g(\lambda) \left( \frac{R_p}{\rho} \right)^2 \left[ \frac{\sin(\alpha) + (\pi - \alpha)\cos(\alpha)}{\pi}  \right]
 
 
 Since Prox Cen b is an RV detected planet, the orbital inclination is unconstrained.  The value of orbital inclination will affect the true mass of the planet, and consequently the radius, and also the phase angle as a function of orbit phase.
@@ -105,7 +99,20 @@ Placing these four Mass/Radii on a density plot:
 The four above estimated mass/radii are plotted as the black triangles.  The solid curves represent theoretical density curves from `Zeng & Sasselov 2013 <https://ui.adsabs.harvard.edu/abs/2013PASP..125..227Z/abstract>`_ (downloaded from `Harvard CfA <https://lweb.cfa.harvard.edu/~lzeng/planetmodels.html#mrtables>`_) for airless planets of varying compositions: pure iron (100% Fe), Earth-like rocky (32.5% Fe, 67.5% MgSiO3), pure rock (100% MgSiO3), pure water (100% H2O), and 50% H2O 50% Earth-like rocky core.  The red dashed lines show models of an Earth-like rocky planet with varying percent H2 envelope by mass.  We see that the three least massive planets fall nicely on the Earth-like density line, while the most massive is consistent with an Earth-like planet with a 1% H2 envelope.  We did not estimate uncertainties on the Prox Cen b densnity estimates, so this analysis is used as a rough estimate of what is likely to be found on this planet.
 
 
+The figure below shows the Prox Cen b orbit in the sky plane, with the colormap showing viewing phases, as a function of inclination for four inclinations spanning the above table.  The thick black markers show inferior (diamond) and superior (circle) conjunction; black X's mark the phase sampling for the model suite.  The solid grey circles mark the size of 1:math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm. The dotted grey lines mark the size of :math:`\lambda`/D for each.  The bottom figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).
 
+.. image:: images/ProxCenb-Model-phase-sampling.png
+   :width: 100 %
+
+.. image:: images/ProxCenb-Model-phase-sampling-planeofskySepvsTime.png
+   :width: 100 %
+
+
+No Atmosphere Models
+--------------------
+
+
+The first case is an airless rocky planet.  In this case, we will simply observe the star's spectrum reflecting from the surface, with a planet-star contrast determined by the albedo as a function of wavelength for the planet's surface composition.
 
 Albedo
 ~~~~~~
@@ -124,5 +131,12 @@ A color-magnitude diagram provides even more distinguishing power.  Below is sho
 .. image:: images/ProxCenb-noatm-contrast-vs-surftype-CMD.png
    :width: 100 %
 
-Atmosphere Models
--------------------
+Earth Atmosphere Models
+-----------------------
+
+
+
+
+
+Venus Atmosphere Models
+-----------------------

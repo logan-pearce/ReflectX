@@ -74,6 +74,9 @@ Known system parameters for the planets of interest, b and c:
    * - metallicity
      - 0.21 dex
      - Rosenthal et al. 2021
+   * - Distance
+     - 4.67207 +/- 0.00077 pc
+     - Gaia DR3
 
 
 :sup:`*` Rivera et al. 2010 and other references enforce co-planarity with GJ 876 b to derive properties for GJ 876 c.  
@@ -82,14 +85,15 @@ Known system parameters for the planets of interest, b and c:
 GJ 876 b
 ---------
 
-`Download the models <https://zenodo.org/records/10594918>`_
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.11130477.svg
+  :target: https://doi.org/10.5281/zenodo.11130477
+`Download the models <https://doi.org/10.5281/zenodo.11130477>`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 
 GJ 876 b is a 2 Mjup planet with a well-constrained inclination, and thus well known mass, and orbital parameters.  So we can use Picaso's PT solver and Virga to make gas giant models for phases along the known orbit.
 
-We sampled the viewing phase parameter space in 5 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The locations of min and max phases are marked with thick black circles, and the location of quadrature (phase = 90 deg) is marked with a thick black square.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The bottom figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).
+We sampled the viewing phase parameter space in 5 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The thick black markers show inferior (diamond) and superior (circle) conjunction; black X's mark the phase sampling for the model suite.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The bottom figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).
 
 .. image:: images/GJ876b-Model-phase-sampling.png
    :width: 100 %
@@ -102,7 +106,7 @@ We produced models for each of the above phases using `Picaso <https://natashaba
 
 We produced models for three values of C/O ratio, which impacts molecular mixing ratios (see `Madhusudhan 2012 <https://ui.adsabs.harvard.edu/abs/2012ApJ...758...36M/abstract>`_).  This plot shows the pressure-temperature profile for models of the three C/O ratios, plotted over condensation curves for a variety of molecules.  If the condensation curve crosses below the PT profile, the molecule can condense to form clouds.  Our models of GJ 876 b contain water and S8 (haze) clouds. We see that the value of C/O has little effect on the PT profile in our models.
 
-.. image:: images/GJ876b-PTprofiles.png
+.. image:: images/GJ876b-PTProfiles-ctos.png
    :width: 100 %
 
 For cloud models we parameterized cloud properties by varying the sedimentation efficiency :math:`f_sed` and the strength of mixing :math:`k_zz`.  We used:
@@ -119,7 +123,7 @@ Results
 Colors at a given phase
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The figure below shows the planet/star contrast ('fpfs') at the central wavelength of each filter for the model at quadrature for each of the cloudy and cloud-free cases.  The filter passbands are shown at the bottom in grey.  We see that for high values of kzz + large fsed the clouds aren't appreciably different from the cloud-free case.  The kzz value has significant impact on the contrast for higher values of fsed, while for fsed=0.03 it makes little difference. For the smallest fsed the contrast is early constant, while for thinner clouds (higher fsed) the model is much fainter at redder wavelengths.
+The figure below shows the planet/star contrast at the central wavelength of each filter for the model at quadrature for each of the cloudy and cloud-free cases.  The filter passbands are shown at the bottom in grey.  We see that for high values of kzz + large fsed the clouds aren't appreciably different from the cloud-free case.  The kzz value has significant impact on the contrast for higher values of fsed, while for fsed=0.03 it makes little difference. For the smallest fsed the contrast is early constant, while for thinner clouds (higher fsed) the model is much fainter at redder wavelengths.
 
 .. image:: images/GJ876b-phase90.0-cto1.0-contrast-per-filter.png
    :width: 100 %
@@ -163,7 +167,7 @@ The eccentric orbit
 ~~~~~~~~~~~~~~~~~~~
 For these models we adopted the inclination, eccentricity, and mass in the above table.  Given the high eccentricity, the planet-star separation varies significantly enough to potentially affect the atmophere model.
 
-We sampled the viewing phase parameter space in 5 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The locations of min and max phases are marked with thick black circles; the red dashed line marks the line of nodes, with phase>90 being towards the observer and phase<90 being away from the observer.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The middle figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).  The bottom figure shows the phase and separation sampling as a function of planet-star separation.
+We sampled the viewing phase parameter space in 5 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The thick black markers show inferior (diamond) and superior (circle) conjunction; black X's mark the phase sampling for the model suite; the red dashed line marks the line of nodes, with phase>90 being towards the observer and phase<90 being away from the observer.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The middle figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).  The bottom figure shows the phase and separation sampling as a function of planet-star separation.
 
 .. image:: images/GJ876c-Model-phase-sampling.png
    :width: 100 %
