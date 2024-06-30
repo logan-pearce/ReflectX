@@ -72,14 +72,17 @@ and the time to a desired :math:`S/N` is:
 Males et al. gives model maps for :math:`I_{as}` as a function of guide star magnitude and wavefront control (WFC; either simple integrator (SI) or linear predictive control (LP, Males et al. 2018)). Males et al. 2021 Figure 10 gives the average atmospheric speckle lifetime :math:`\tau_{as}` as a function of several parameters. For an LP WFC on a 24.5~m (GMT sized) mirror on a 5th magnitude star :math:`\tau_{as} \sim 0.02` s; for an 8th magnitude star its :math:`\sim 0.03` s. For SP WFC it's significantly longer, :math:`\sim 0.07` s for a 24.5~m mirror on a 5th magnitude star.
 
 
-In code: 
+`These equations have been translated into code here <https://github.com/logan-pearce/ReflectX/blob/13d1a3ea60f92f556789bcdd5cfe061a65f806d7/ReflectX/functions/ReflectXTools.py#L199>`_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+And example of using a ReflectX model with these functions:
 
 .. code-block:: python
+
     from ReflectXTools import GetSNR
-    directory = 'path_to_spectrum_files/'
+    directory = 'path_to_spectrum_files/GJ876c/'
     c = pd.read_csv(directory+'ReflectX-spectra-phase90-cto-1.0.csv')
-    directory = 'path_to_model_files//'
+    directory = 'path_to_model_files/GJ876c/'
     pc = pickle.load(open(directory+'phase90-cto-1.0-model.pkl','rb'))
 
     wavelength = np.array(c['wavelength [um]'])
