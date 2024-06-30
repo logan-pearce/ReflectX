@@ -88,7 +88,7 @@ GJ 876 b
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.11130477.svg
   :target: https://doi.org/10.5281/zenodo.11130477
 `Download the models <https://doi.org/10.5281/zenodo.11130477>`_
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 GJ 876 b is a 2 Mjup planet with a well-constrained inclination, and thus well known mass, and orbital parameters.  So we can use Picaso's PT solver and Virga to make gas giant models for phases along the known orbit.
@@ -119,6 +119,12 @@ To analyze our model results we used filter passbands similar to current and fut
 
 Results
 ~~~~~~~
+
+
+.. image:: images/GJ876b-abs-features-phase90-cto1.png
+   :width: 100 %
+
+This figure shows planet-star contrast spectrum from models of GJ 876 b at quadrature with C/0 = 1.0 for three cloud configurations, :math:`f_{\rm{sed}} = 0.3, K_{zz} 1\times10^{-9}` (light blue), :math:`f_{\rm{sed}} = 6, K_{zz} 1\times10^{-9}` (dark purple), and cloud-free (light pink). Molecular absorption lines are marked for the :math:`f_{\rm{sed}} = 6` case. Filter curves used in this analysis are shown in grey below. The atmosphere is H$_2$ and He dominant, with water, methane, and ammonia the next most prevalent molecules. As cloud opacity decreases molecular absorption lines appear, as well as a slope to the red end from the :math:`H_2/He` continuum.
 
 Colors at a given phase
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +173,7 @@ The eccentric orbit
 ~~~~~~~~~~~~~~~~~~~
 For these models we adopted the inclination, eccentricity, and mass in the above table.  Given the high eccentricity, the planet-star separation varies significantly enough to potentially affect the atmophere model.
 
-We sampled the viewing phase parameter space in 5 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The thick black markers show inferior (diamond) and superior (circle) conjunction; black X's mark the phase sampling for the model suite; the red dashed line marks the line of nodes, with phase>90 being towards the observer and phase<90 being away from the observer.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The middle figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).  The bottom figure shows the phase and separation sampling as a function of planet-star separation.
+We sampled the viewing phase parameter space in 25 degree phase angles.  This figure shows the phase sample points along the orbit as viewed in the plane of the sky.  The thick black markers show inferior (diamond) and superior (circle) conjunction; black X's mark the phase sampling for the model suite; the red dashed line marks the line of nodes, with phase>90 being towards the observer and phase<90 being away from the observer.  The solid grey circles mark the size of 1 :math:`\lambda`/D for MagAO-X (diameter = 6.5m; larger circle) and for GMagAO-X (diameter = 25.4m; smaller circle) at 800 nm.  The dotted grey lines mark the size of :math:`2 \times \lambda`/D for each.  The middle figure shows the same in separation as a function of time (parameterized as orbital mean anomaly).  The bottom figure shows the phase and separation sampling as a function of planet-star separation.
 
 .. image:: images/GJ876c-Model-phase-sampling.png
    :width: 100 %
@@ -182,6 +188,7 @@ We sampled the viewing phase parameter space in 5 degree phase angles.  This fig
 
 Results
 ~~~~~~~
+
 
 This figure shows GJ 876 c models for C/O = 1.0 in J and H-i space for three phases for 7 cloud conditions.  We see that for some cases the planet actually gets brighter at higher phases.
 
