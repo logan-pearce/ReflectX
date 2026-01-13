@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'ReflectX'
-copyright = 'Logan Pearce, 2023'
+copyright = 'Logan Pearce, 2026'
 author = 'Logan Pearce'
 
 release = '0.1'
@@ -33,6 +33,7 @@ extensions = ["sphinx_rtd_theme"]
 html_theme = "sphinx_rtd_theme"
 #html_theme = "classic"
 html_logo = 'images/reflectX-transp.png'
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
