@@ -1,10 +1,112 @@
-################## SNR as a function of time from ReflectX models:
-
 import numpy as np
 import astropy.constants as const
 import astropy.units as u
 import pandas as pd
 import pickle
+
+import xarray as xr
+import h5netcdf
+import h5py
+
+def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None):
+    loaded = {}
+    CtoO = str(CtoO).replace('.','')
+    filename = path + 'ReflectX/ReflectXGasGiantGrid/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/model.nc'
+    with h5netcdf.File(filename, "r+") as f:
+        def recurse(group, prefix=""):
+            for name, subgrp in group.groups.items():
+                full_path = f"{prefix}/{name}".strip("/")
+                # If the subgroup contains variables, open it as an xarray dataset
+                if subgrp.variables:
+                    ds = xr.open_dataset(
+                        filename,
+                        engine="h5netcdf",
+                        group=full_path,
+                    )
+                    loaded[full_path] = ds
+                # Recurse deeper
+                recurse(subgrp, full_path)
+        recurse(f)
+    if teq == None:
+        return loaded
+    else:
+        key = 'teq'+str(teq)+'/phase'+str(phase)
+        if clouds == None:
+            key += '/cloudfree'
+        else:
+            if type(clouds['kzz']) == float:
+                kzz = '{:.0e}'.format(clouds['kzz'])
+            elif type(clouds['kzz']) == str:
+                kzz = clouds['kzz']
+            key += '/fsed'+str(clouds['fsed']).replace('.','')+'/kzz'+kzz
+        return loaded[key]
+
+def CreateGrid(min_wavelength, max_wavelength, constant_R):
+    """Simple function to create a wavelength grid defined with a constant R.
+    Adapted from PICASO create_grid function
+    https://github.com/natashabatalha/picaso/blob/defc72955ad468496a814c1300e0f57244a75cd6/picaso/opacity_factory.py#L667C1-L694C27
+
+    Parameters
+    ----------
+    min_wavelength : float 
+        Minimum wavelength in microns
+    max_wavelength : float 
+        Maximum wavelength in microns
+    constant_R : float 
+        Constant R spacing
+
+    Returns
+    -------
+    wavelength grid defined at constant Resolution
+    """
+    spacing = (2.*constant_R+1.)/(2.*constant_R-1.)
+    
+    npts = np.log(max_wavelength/min_wavelength)/np.log(spacing)
+    
+    wsize = int(np.ceil(npts))+1
+    newwl = np.zeros(wsize)
+    newwl[0] = min_wavelength
+    
+    for j in range(1,wsize):
+        newwl[j] = newwl[j-1]*spacing
+    
+    return newwl
+    
+def MeanRegrid(x, y, newx=None, R=None):
+    """
+    Rebin the spectrum. Adapted from PICASO mean_regrid function
+    https://github.com/natashabatalha/picaso/blob/defc72955ad468496a814c1300e0f57244a75cd6/picaso/justplotit.py#L31C1-L63C19
+
+    Parameters
+    ----------
+    x : array 
+        Wavenumbers
+    y : array 
+        Anything (e.g. albedo, flux)
+    newx : array 
+        new array to regrid on. 
+    R : float 
+        create grid with constant R
+    binwidths : array 
+        bin widths centered at x 
+
+    Returns
+    -------
+    final x, and final y
+    """
+    from scipy.stats import binned_statistic
+    if (isinstance(newx, type(None)) & (not isinstance(R, type(None)))) :
+        newx = CreateGrid(min(x), max(x), R)
+    elif (not isinstance(newx, type(None)) & (isinstance(R, type(None)))) :  
+        d = np.diff(newx)
+        binedges = np.array([newx[0]-d[0]/2] + list(newx[0:-1]+d/2.0) + [newx[-1]+d[-1]/2])
+        newx = binedges
+    else: 
+        raise Exception('Please either enter a newx or a R') 
+    y, edges, binnum = binned_statistic(x,y,bins=newx)
+    newx = (edges[0:-1]+edges[1:])/2.0
+
+    return newx, y
 
 def GetPhotonsPerSec(wavelength, flux, filt, distance, radius, primary_mirror_diameter,
                     return_ergs_flux_times_filter = False, Omega = None):
