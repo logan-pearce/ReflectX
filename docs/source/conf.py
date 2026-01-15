@@ -29,7 +29,7 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-extensions = ["sphinx_rtd_theme", "nbsphinx", 'sphinx.ext.duration',
+extensions = ["nbsphinx", 'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
