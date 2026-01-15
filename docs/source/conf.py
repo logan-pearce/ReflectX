@@ -38,7 +38,7 @@ extensions = ["nbsphinx", 'sphinx.ext.duration',
 html_theme = "sphinx_rtd_theme"
 #html_theme = "classic"
 html_logo = 'images/reflectX-transp.png'
-highlight_language = 'python3'
+highlight_language = 'none'
 
 autoapi_dirs = ['../../ReflectX']
 autoapi_type = "python"
