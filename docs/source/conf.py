@@ -34,10 +34,11 @@ extensions = ["nbsphinx", 'sphinx.ext.duration',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx','autoapi.extension',
-    'sphinx.ext.napoleon']
+    'sphinx.ext.napoleon','sphinx-copybutton']
 html_theme = "sphinx_rtd_theme"
 #html_theme = "classic"
 html_logo = 'images/reflectX-transp.png'
+highlight_language = 'none'
 
 autoapi_dirs = ['../../ReflectX']
 autoapi_type = "python"
