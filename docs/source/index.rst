@@ -20,7 +20,7 @@ Contents
    :maxdepth: 2
 
    gasgiantgrid
+   notebooks/Using-The-Models
+   autoapi/index
    
-
-
    

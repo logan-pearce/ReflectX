@@ -6,8 +6,8 @@ project = 'ReflectX'
 copyright = 'Logan Pearce, 2026'
 author = 'Logan Pearce'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.0.0'
 
 # -- General configuration
 
@@ -29,10 +29,18 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-extensions = ["sphinx_rtd_theme"]
+extensions = ["sphinx_rtd_theme", "nbsphinx", 'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx','autoapi.extension',
+    'sphinx.ext.napoleon']
 html_theme = "sphinx_rtd_theme"
 #html_theme = "classic"
 html_logo = 'images/reflectX-transp.png'
+
+autoapi_dirs = ['../../ReflectX']
+autoapi_type = "python"
 
 
 # -- Options for EPUB output
