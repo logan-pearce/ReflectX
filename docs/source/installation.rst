@@ -29,4 +29,4 @@ or to install the development version you can clone the git repo and install a l
     $ cd ReflectX
     $ pip install -e .
 
-Issues? Create a github issue or email lapearce@umich.edu
+Issues? Create a `github issue <https://github.com/logan-pearce/ReflectX>`_ or email lapearce@umich.edu
