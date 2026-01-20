@@ -21,7 +21,7 @@ Contents
 
    installation
    gasgiantgrid
-   notebooks/Using-The-Models
+   notebooks/Tutorial
    autoapi/index
    
 
