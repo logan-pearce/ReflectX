@@ -2,3 +2,5 @@ numpy
 xarray
 h5netcdf
 h5py
+scipy
+astropy

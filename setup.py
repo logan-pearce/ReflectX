@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='ReflectX',
-      version='1.0',
+      version='1.0.0',
       description='Reflected Light planet models',
       url='https://reflectx.readthedocs.io/en/latest/',
       author='Logan Pearce',
