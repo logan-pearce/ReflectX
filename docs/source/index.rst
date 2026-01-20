@@ -19,6 +19,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   installation
    gasgiantgrid
    notebooks/Using-The-Models
    autoapi/index
