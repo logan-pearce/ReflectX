@@ -71,5 +71,3 @@ Diagram
   :align: center
 
 
-Using the models
-^^^^^^^^^^^^^^^^
