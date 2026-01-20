@@ -36,7 +36,6 @@ extensions = ["nbsphinx", 'sphinx.ext.duration',
     'sphinx.ext.intersphinx','autoapi.extension',
     'sphinx.ext.napoleon','sphinx_copybutton']
 html_theme = "sphinx_rtd_theme"
-#html_theme = "classic"
 html_logo = 'images/reflectX-transp.png'
 highlight_language = 'none'
 
