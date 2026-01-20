@@ -16,7 +16,7 @@ Recommend creating a new conda environment:
     $ conda create python=3.12 -n ReflectX-env
     $ conda activate ReflectX-env
     $ conda install pip
-	$ pip install ReflectX
+    $ pip install ReflectX
 
 or to install the development version you can clone the git repo and install a local editable copy:
 
@@ -25,7 +25,7 @@ or to install the development version you can clone the git repo and install a l
     $ conda create python=3.12 -n ReflectX-env
     $ conda activate ReflectX-env
     $ conda install pip
-	$ git clone https://github.com/logan-pearce/ReflectX.git
+    $ git clone https://github.com/logan-pearce/ReflectX.git
     $ cd ReflectX
     $ pip install -e .
 
