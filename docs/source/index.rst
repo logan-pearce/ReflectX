@@ -8,6 +8,10 @@ ReflectX
 
 **ReflectX** is a suite of planet reflected light spectra generated from `PICASO <https://natashabatalha.github.io/picaso/>`_ and `VIRGA <https://natashabatalha.github.io/virga/>`_ for detecting and characterizing directly imaged exoplanets in reflected light using `MagAO-X <https://xwcl.science/>`_, ELTs (ELT-PCS and `GMagAO-X <https://magao-x.org/gmagao-x/>`_), and HWO.
 
+.. note::
+
+   Model Download will be available very soon!  Watch this space.
+
 
 .. note::
 
@@ -28,6 +32,6 @@ Contents
 Changelog
 ---------
 
-**1.0.0 (2026-01-20)**
+**1.0.0 (TBD)**
 
 * Initial release of gas giant model set
