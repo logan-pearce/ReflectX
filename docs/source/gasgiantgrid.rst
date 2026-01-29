@@ -63,11 +63,18 @@ Each spectrum contains:
   * Planet - star flux ratio (called ``fpfs``)
   * Planet flux spectrum in ergs cm^-2 s^-1 cm^-1 
 
+Diagram of how models are computed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: images/Computation-Diagram.png
+  :width: 700
+  :align: center
 
-Diagram
-^^^^^^^
+Diagram of grid structure
+^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: images/GasGiantGridDiagram.png
   :width: 700
   :align: center
+
+
 
 
