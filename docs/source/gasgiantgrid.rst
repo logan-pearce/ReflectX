@@ -20,7 +20,7 @@ The base Gas Giant grid is defined by permutations of:
     * F1-like: Teff = 7000 K, M = 1.5 Msun, R = 1.7 Rsun
 
 
-* Five planet types which sets the mass, radius, and metallicity. Mass/radius were estimated from `an emperical planet mass-radius relation <https://jaredmales.github.io/mxlib-doc/group__planets.html#ga4b350ecfdeaca1bedb897db770b09789>`_ and metallicity was estimated using `an emperical mass-metallicity relation <https://stellarplanet.org/science/mass-metallicity/>`_
+* Five planet types which sets the mass, radius, and metallicity. Mass/radius were estimated from `an emperical planet mass-radius relation <https://ui.adsabs.harvard.edu/abs/2025PASP..137i4401P/abstract>`_ (Appendix C) and metallicity was estimated using `an emperical mass-metallicity relation <https://stellarplanet.org/science/mass-metallicity/>`_
 
     * Neptune-like: R = 0.35 Rjup, M = 0.05 Mjup, Metallicity = 100 x solar
     * Super Neptune: R = 0.54 Rjup, M = 0.09 Mjup, Metallicty = 50 x solar
