@@ -27,6 +27,7 @@ Contents
 
    installation
    gasgiantgrid
+   GJ876bc-models
    notebooks/Tutorial
    autoapi/index
    
