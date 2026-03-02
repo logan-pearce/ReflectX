@@ -24,7 +24,7 @@ def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None)
     """
     loaded = {}
     CtoO = str(CtoO).replace('.','')
-    filename = path + 'ReflectX/ReflectXGasGiantGrid/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/model.nc'
+    filename = path + '/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/model.nc'
     with h5netcdf.File(filename, "r+") as f:
         def recurse(group, prefix=""):
             for name, subgrp in group.groups.items():
