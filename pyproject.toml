@@ -23,7 +23,7 @@ dependencies = [
 authors = [{name = "Logan Pearce", email = "lapearce@umich.edu"}]
 description = 'Reflected Light planet models'
 readme = "README.rst"
-requires-python = ">=3.9"
+requires-python = ">3.9"
 
 [project.urls]
 Documentation = "https://reflectx.readthedocs.io"
