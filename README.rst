@@ -1,7 +1,7 @@
 ReflectX Model Suite of Exoplanet Reflected Light Spectra
 =========================================================
 
-.. image:: docs/source/images/reflectX-transp-white.png
+.. image:: docs/source/images/logo-sol.png
    :width: 60 %
 
 Suite of reflected light exoplanet models for direct imaging with MagAO-X, ELTs, and HWO. 
