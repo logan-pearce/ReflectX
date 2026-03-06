@@ -6,6 +6,7 @@ import pickle
 import scipy
 import xarray as xr
 import h5netcdf
+import scipy
 
 
 def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None):
@@ -149,21 +150,82 @@ def ScaleModelToStar(model, distance):
             )
     return scaled_model
 
-def GetFluxInFilter(wavelength, flux, filtertransmission):
+def GetFluxInFilter(wavelength, flux, filterwavelength, filtertransmission):
     ''' Compute the average flux in a filter by multiplying the spectrum by the filter transmission curve
     and dividing by the filter transmission curve
     
     Args:
         wavelength (arr): wavelength array
         flux (arr): flux array
-        filtertransmission (arr): filter transmission curve on same wavelength array
+        filterwavelength (arr): filter wavelength array
+        filtertransmission (arr): filter transmission curve
 
     Returns:
         float: weighted average flux in filter
     '''
+    # resample if necessary:  
+    if wavelength.shape[0] != filtertransmission.shape[0]:
+        from scipy.interpolate import interp1d
+        filterwavelength = np.pad(filterwavelength,(1,1),constant_values=(2.01,0.2))
+        filtertransmission = np.pad(filtertransmission,(1,1), constant_values=(0,0))
+        func = interp1d(filterwavelength,filtertransmission)
+        filtertransmission = func(wavelength)
+        
     dl = [wavelength[i] - wavelength[i-1] for i in range(1,len(wavelength))]
     dl.append(dl[-1])
     filter_weighted_average = np.sum(flux * filtertransmission * wavelength * dl) / np.sum(filtertransmission * wavelength * dl)
     return filter_weighted_average
+
+
+def VegaToAB(filt):
+    ''' The SDSS system uses AB mags not Vega mags.  To convert Vega mags to AB mag, add this  
+    value to the Vega mag to convert to AB. These factors = AB - Vega
+    From https://www.astronomy.ohio-state.edu/martini.10/usefuldata.html
+    '''
+    Dict = {
+        'U':0.79,
+        'B':-0.09,
+        'V':0.02,
+        'R':0.21,
+        'I':0.45,
+        'J':0.91,
+        'H':1.39,
+        'Ks':1.85,
+        'u':0.91,
+        'g':-0.08,
+        'r':0.16,
+        'i':0.37,
+        'z':0.54,
+        'Y':0.634
+    }
+    return Dict[filt]
+
+def GetMagInFilter(wavelength, flux, filtername = None, filterwavelength = None, filtertransmission = None):
+    ''' For a given stellar spectrum in a specific filter, return the Vega magnitude of the star in 
+    that filter.
+    
+    Args:
+        spectrum_wavelength [arr]: spectrum wavelength
+        spectrum_flux [arr]: spectrum flux
+        filter_lamda0 [astropy unit object]: central wavelength of filter. Must include astropy unit
+                Ex: 1.2*u.um
+        spectrum_wavelength_unit [astropy unit]: astropy unit for wavelengths. Ex: u.um
+
+    Returns:
+        flt: ratio of spectrum to Vega flux in that filter in magnitudes, with correction to AB mags for SDSS filters.
+    
+    '''
+    filters = LoadFilters()
+    specflux = GetFluxInFilter(wavelength, flux, filtername = filtername, filterwavelength = filterwavelength, 
+                               filtertransmission = filtertransmission)
+    vegaflux = GetFluxInFilter(filters.vegawave[::-1], filters.vega[::-1], filtername = filtername, filterwavelength = filterwavelength, 
+                               filtertransmission = filtertransmission)
+    # return ratio of spectrum to vega in magnitudes:
+    if 'SDSS' in filtername:
+        factor = VegaToAB(filtername.replace('SDSS',''))
+        return -2.5*np.log10(specflux/vegaflux) + factor
+    else:
+        return -2.5*np.log10(specflux/vegaflux)
+
 
 
