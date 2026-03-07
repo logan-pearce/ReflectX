@@ -1,7 +1,7 @@
 ReflectX Gas Giant Grid
 =======================
 
-.. admonition:: Download
+.. important::
   Download Gas Giant models `here <https://zenodo.org/records/18315998>`_
   
 
