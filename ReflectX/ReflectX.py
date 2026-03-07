@@ -12,7 +12,7 @@ import scipy
 def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None):
     """
     Args:
-        path (str): Path to location of `ReflectX` folder containing models
+        path (str): Path to location of `Teffs` folders containing models
         Teff (int): Star effective temperature, must be 3000, 3500, 4000, 5000, or 7000
         Planet (str): Specify planet (see docs for details of each planet type); must be Neptune, SuperNeptune, Saturn, Jupiter, or SuperJupiter
         CtoO (float): Planet C/O ratio; must be 0.5, 1.0, or 1.5
