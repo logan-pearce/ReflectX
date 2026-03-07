@@ -8,5 +8,5 @@ setup(name='ReflectX',
       author_email='lapearce@umich.edu',
       #license='MIT',
       install_requires=['numpy','scipy','astropy','matplotlib','xarray', 'h5netcdf', 'h5py'],
-      packages=['ReflectX'],
+      packages=['reflectx'],
       zip_safe=False)

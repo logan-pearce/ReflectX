@@ -1,5 +1,5 @@
 
-.. image:: images/logo-sol
+.. image:: images/logo-sol.png
   :width: 500
   :align: center
 
