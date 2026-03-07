@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ReflectX"
-dynamic = ["version"]
+version = "1.0.1"
 dependencies = [
     "numpy",
     "astropy",
