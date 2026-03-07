@@ -1,5 +1,5 @@
 
-.. image:: images/reflectX-transp.png
+.. image:: images/logo-sol
   :width: 500
   :align: center
 
