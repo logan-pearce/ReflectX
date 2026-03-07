@@ -1,10 +1,8 @@
 ReflectX Gas Giant Grid
 =======================
 
-Download
-^^^^^^^^
-.. rst-class:: center
-  `Download Gas Giant models here <https://zenodo.org/records/18315998>`_
+.. admonition:: Download
+  Download Gas Giant models `here <https://zenodo.org/records/18315998>`_
   
 
 
