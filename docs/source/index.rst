@@ -12,7 +12,7 @@ Currently ReflectX version 1 offers a grid of equilibrium gas giant models spann
 
 .. important::
 
-  Download Gas Giant models `here <https://zenodo.org/records/18315998>`_
+  .. Download Gas Giant models `here <https://zenodo.org/records/18315998>`_
 
 
 .. note::
