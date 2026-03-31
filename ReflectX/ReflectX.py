@@ -26,7 +26,7 @@ def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None)
     loaded = {}
     CtoO = str(CtoO).replace('.','')
     filename = path + '/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/model.nc'
-    with h5netcdf.File(filename, "r+") as f:
+    with h5netcdf.File(filename, "r") as f:
         def recurse(group, prefix=""):
             for name, subgrp in group.groups.items():
                 full_path = f"{prefix}/{name}".strip("/")
@@ -228,4 +228,21 @@ def GetMagInFilter(wavelength, flux, filtername = None, filterwavelength = None,
         return -2.5*np.log10(specflux/vegaflux)
 
 
-
+def load_all_groups(filename):
+    loaded = {}
+    with h5netcdf.File(filename, "r+") as f:
+        def recurse(group, prefix=""):
+            for name, subgrp in group.groups.items():
+                full_path = f"{prefix}/{name}".strip("/")
+                # If the subgroup contains variables, open it as an xarray dataset
+                if subgrp.variables:
+                    ds = xr.open_dataset(
+                        filename,
+                        engine="h5netcdf",
+                        group=full_path,
+                    )
+                    loaded[full_path] = ds
+                # Recurse deeper
+                recurse(subgrp, full_path)
+        recurse(f)
+    return loaded
