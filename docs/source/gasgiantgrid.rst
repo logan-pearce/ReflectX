@@ -49,14 +49,14 @@ Within each model file, spectra are futher parameterized into:
 * Five phase angles: 0 deg 45 deg, 90 deg, 120 deg, 140 deg. With 0 deg being full phase, 90 deg being quadrature, and 180 deg being new phase. Above phase ~ 140 deg there is negligible flux reflected towards the observer.  Full phase is not observationally possible but we include it for reference.
 
 For each model+Teq there are provided:
-    * PT Profile csv file
-    * Plot of PT Profile with gas condensation curves
+  * PT Profile csv file
+  * Plot of PT Profile with gas condensation curves
 
 For each model+Teq+phase there are:
-    * Cloud-free spectra
-    * Cloudy spectra, parameterized by:
-      * Six f_sed values, which sets the vertical extent of clouds: 0.1, 0.5, 1, 3, 6, 10. A small f_sed produces thick vertically extended clouds with small particles; a large value of f_sed produces thin clouds with large particles. See `Gao et al 2018 <https://ui.adsabs.harvard.edu/abs/2018ApJ...855...86G/abstract>`_
-      * Two  K_zz values, which sets the strength of vertical mixing in the atmosphere: 1x10^9, 1x10^11.  Larger value = more vigorous mixing. See `Mukherjee et al. 2022 <https://ui.adsabs.harvard.edu/abs/2022ApJ...938..107M/abstract>`_
+  * Cloud-free spectra
+  * Cloudy spectra, parameterized by:
+    * Six f_sed values, which sets the vertical extent of clouds: 0.1, 0.5, 1, 3, 6, 10. A small f_sed produces thick vertically extended clouds with small particles; a large value of f_sed produces thin clouds with large particles. See `Gao et al 2018 <https://ui.adsabs.harvard.edu/abs/2018ApJ...855...86G/abstract>`_
+    * Two  K_zz values, which sets the strength of vertical mixing in the atmosphere: 1x10^9, 1x10^11.  Larger value = more vigorous mixing. See `Mukherjee et al. 2022 <https://ui.adsabs.harvard.edu/abs/2022ApJ...938..107M/abstract>`_
 
 Spectra are stored as Xarrays, which provide details including the units (wavelength: microns, spectra: ergs cm^-2 s^-1 cm^-1) and the values of every parameter (stored as attributes) entered into PICASO to make the model.
 

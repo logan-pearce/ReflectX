@@ -28,13 +28,16 @@ Contents
    installation
    gasgiantgrid
    GJ876bc-models
-   modelingearth
    notebooks/Tutorial
    autoapi/index
    
 
 Changelog
 ---------
+
+**1.0.2 (2026-09-09)**
+
+* Addition of a few new functions and updated docs to correspond with submission of the model grid paper
 
 **1.0.1 (2026-03-07)**
 

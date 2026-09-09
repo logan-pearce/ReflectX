@@ -9,7 +9,7 @@ import h5netcdf
 import scipy
 
 
-def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None):
+def LoadModel(path, Teff, Planet, CtoO, Teq, phase = None, clouds = None):
     """
     Args:
         path (str): Path to location of `Teffs` folders containing models
@@ -25,7 +25,7 @@ def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None)
     """
     loaded = {}
     CtoO = str(CtoO).replace('.','')
-    filename = path + '/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/model.nc'
+    filename = path + '/Teff'+str(Teff)+'/'+Planet+'/CtoO'+CtoO+'/'+str(Teq)+'_model.nc'
     with h5netcdf.File(filename, "r") as f:
         def recurse(group, prefix=""):
             for name, subgrp in group.groups.items():
@@ -41,10 +41,10 @@ def LoadModel(path, Teff, Planet, CtoO, teq = None, phase = None, clouds = None)
                 # Recurse deeper
                 recurse(subgrp, full_path)
         recurse(f)
-    if teq == None:
+    if phase == None:
         return loaded
     else:
-        key = 'teq'+str(teq)+'/phase'+str(phase)
+        key = 'teq'+str(Teq)+'/phase'+str(phase)
         if clouds == None:
             key += '/cloudfree'
         else:
@@ -116,11 +116,35 @@ def MeanRegrid(x, y, newx=None, R=None):
 def LoadFilters():
     '''
     Load XArray of filter transmission profiles
+
+    Args:
+        None
+    
+    Returns:
+        filter profile XArray
     '''
     import os
     file = os.path.join(os.path.dirname(__file__),"filters.nc")
     filt = xr.open_dataset(file, engine="h5netcdf")
     return filt
+
+def MultiplySpectrumByFilter(spectrum, spectrumwavelength, filterkey):
+    '''
+    Multiply a filter transmission function by a model spectrum using the built in filter curves
+
+    Args:
+        spectrum (XArray): spectrum to be multiplied. Ex: model fpfs or planetflux
+        spectrumwavelength (XArray): model wavelength array
+        filterkey (str): Key for desired filter. Must be one of the keys from the LoadFilter() XArray
+
+    Returns:
+        arr: filter profile times spectrum
+    '''
+
+    from ReflectX import LoadFilters, MeanRegrid
+    filters = LoadFilters()
+    newfiltwav, newfilttrans = MeanRegrid(filters[filterkey].wavelength, filters[filterkey].data, newx = spectrumwavelength)
+    return newfilttrans * spectrum.data
 
 def ScaleModelToStar(model, distance):
     """
@@ -150,7 +174,7 @@ def ScaleModelToStar(model, distance):
             )
     return scaled_model
 
-def GetFluxInFilter(wavelength, flux, filterwavelength, filtertransmission):
+def GetFluxInFilter(wavelength, flux, filtername = None, filterwavelength = None, filtertransmission = None):
     ''' Compute the average flux in a filter by multiplying the spectrum by the filter transmission curve
     and dividing by the filter transmission curve
     
@@ -164,6 +188,13 @@ def GetFluxInFilter(wavelength, flux, filterwavelength, filtertransmission):
         float: weighted average flux in filter
     '''
     # resample if necessary:  
+    if filtername is not None:
+        filters = LoadFilters()
+        filterwavelength = filters.wavelength
+        filtertransmission = filters[filtername]
+    else:
+        pass
+
     if wavelength.shape[0] != filtertransmission.shape[0]:
         from scipy.interpolate import interp1d
         filterwavelength = np.pad(filterwavelength,(1,1),constant_values=(2.01,0.2))
@@ -173,7 +204,7 @@ def GetFluxInFilter(wavelength, flux, filterwavelength, filtertransmission):
         
     dl = [wavelength[i] - wavelength[i-1] for i in range(1,len(wavelength))]
     dl.append(dl[-1])
-    filter_weighted_average = np.sum(flux * filtertransmission * wavelength * dl) / np.sum(filtertransmission * wavelength * dl)
+    filter_weighted_average = np.nansum(flux * filtertransmission * wavelength * dl) / np.nansum(filtertransmission * wavelength * dl)
     return filter_weighted_average
 
 

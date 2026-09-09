@@ -98,9 +98,6 @@ We sampled the viewing phase parameter space in 5 degree phase angles.  This fig
 .. image:: images/GJ876b-Model-phase-sampling.png
    :width: 100 %
 
-.. image:: images/GJ876b-Model-phase-sampling-planeofskySepvsTime.png
-   :width: 100 %
-
 
 We produced models for each of the above phases using `Picaso <https://natashabatalha.github.io/picaso/>`_ to model the atmosphere and `Virga <https://natashabatalha.github.io/virga/>`_ to model the cloud properties.
 
@@ -121,7 +118,7 @@ Results
 ~~~~~~~
 
 
-.. image:: images/GJ876b-abs-features-phase90-cto1.png
+.. image:: images/GJ876-fsed-kzz-mol-labeled.png
    :width: 100 %
 
 This figure shows planet-star contrast spectrum from models of GJ 876 b at quadrature with C/0 = 1.0 for three cloud configurations, :math:`f_{\rm{sed}} = 0.3, K_{zz} 1\times10^{-9}` (light blue), :math:`f_{\rm{sed}} = 6, K_{zz} 1\times10^{-9}` (dark purple), and cloud-free (light pink). Molecular absorption lines are marked for the :math:`f_{\rm{sed}} = 6` case. Filter curves used in this analysis are shown in grey below. The atmosphere is H$_2$ and He dominant, with water, methane, and ammonia the next most prevalent molecules. As cloud opacity decreases molecular absorption lines appear, as well as a slope to the red end from the :math:`H_2/He` continuum.
@@ -131,39 +128,34 @@ Colors at a given phase
 
 The figure below shows the planet/star contrast at the central wavelength of each filter for the model at quadrature for each of the cloudy and cloud-free cases.  The filter passbands are shown at the bottom in grey.  We see that for high values of kzz + large fsed the clouds aren't appreciably different from the cloud-free case.  The kzz value has significant impact on the contrast for higher values of fsed, while for fsed=0.03 it makes little difference. For the smallest fsed the contrast is early constant, while for thinner clouds (higher fsed) the model is much fainter at redder wavelengths.
 
-.. image:: images/GJ876b-phase90.0-cto1.0-contrast-per-filter.png
+.. image:: images/GJ876b-phase90-cto1.0-contrast-vs-clouds-CMD-spectrum.png
    :width: 100 %
 
 Putting these models on a color-magnitude diagram, we see that many of the cloudy models are well separated by several magnitudes on J vs H-i space.  The error bars represent three different signal-to-noise ratios.  For S/N = 20 the errorbars are smaller than the markers.  At the largest phase for this system (30 deg, sep = 35 mas, 1.4 :math:`\lambda`/D for MagAO-X at 800 nm, 5.4 :math:`\lambda`/D for GMagAO-X at 800 nm ) the models are ~1 magnitude brighter in J.
 
-.. image:: images/GJ876b-phase90.0-cto1.0-contrast-vs-clouds-CMD.png
-   :width: 100 %
 
 Phase curves
 ^^^^^^^^^^^^
 
-The plots below show contrast as a function of phase in two filters (plots for all filters can be found `here <https://zenodo.org/records/10594918>`_).  We see that the behavior as a function of phase changes in different filter bands.
-
-.. image:: images/GJ876b-phase-curve-r-cto1.0.png
-   :width: 100 %
-
-.. image:: images/GJ876b-phase-curve-J-cto1.0.png
-   :width: 100 %
-
-Putting these on a CMD for three different phases spanning the parameter space:
+The plots below show contrast as a function of phase in two filters (plots for all filters can be found `here <https://zenodo.org/records/10594918>`_).  We see that the behavior as a function of phase changes in different filter bands. Putting these on a CMD for three different phases spanning the parameter space:
 
 .. image:: images/GJ876b-cto1.0-contrast-vs-clouds-CMD-3phases.png
    :width: 100 %
 
+This appears to be due to the behavior of water clouds. At high viewing angle (:math:`\alpha = 140^\circ``) the spectrum at $H$ band (central wavelength :math:`\lambda_0 = 1.62\mu`m) is brighter relative to :math:`i^\prime (\lambda_0 = 0.75\mu m`) than at low viewing angle (:math:`\alpha = 31^\circ`). In the figure below: Right: Cloud optical depth by species, cloud single scattering albedo (grey), and particle asymmetry parameter (pink) as a function of pressure and wavelength. Water cloud dominate photon scattering, which have lower albedo but higher forward scattering at :math:`\lambda>1.4\mu m`. Bottom: illustration of the effect of high particle asymmetry (g) on the reflected flux arriving at the observer. At high asymmetry, particles are more forward scattering. At high viewing angles (i.e. :math:`\alpha = 140^\circ`) the observer sees more of the forward scattered photon flux. Where water clouds dominate a reflected light spectrum, the photometry will move redward as the planet moves to crescent phases when photometry system includes :math:`\lambda > 1\mu m`, providing an atmosphere characterization probe in broadband photometry.
 
-Broadband photometry does not have constraining power for C/O ratio.  The plot below shows three model sets -- cloud free, tall thick clouds, and small thin clouds -- in J vs H-i color for three values of C/O ratio, 0.5, 1.0, and 1.5.  Points in CMD space aren't separated beyond error bars for S/N = 5.
+.. image:: images/cont-cloudtau-asym-fsed6-kzz1e9.png
+   :width: 100 %
 
-.. image:: images/GJ876b-allcto-contrast-vs-clouds-CMD-3phases.png
+.. image:: images/asymmetry-param.png
    :width: 100 %
 
 
 GJ 876 c
 ---------
+.. note::
+
+   This section is based on an older model set and has not been recently updated as of Sep 9, 2026
 
 As discussed above, GJ 876 c does not have a well-constrained orbit.  Most references in the Exoplanet Archive enforce co-planarity with GJ 876 b to derive properties for GJ 876 c, resulting in a co-planar but highly eccentric (e=0.26) orbit.  
 
