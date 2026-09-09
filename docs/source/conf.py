@@ -7,7 +7,7 @@ copyright = 'Logan Pearce, 2026'
 author = 'Logan Pearce'
 
 release = '1.0'
-version = '1.0.0'
+version = '1.0.2'
 
 # -- General configuration
 
@@ -36,7 +36,7 @@ extensions = ["nbsphinx", 'sphinx.ext.duration',
     'sphinx.ext.intersphinx','autoapi.extension',
     'sphinx.ext.napoleon','sphinx_copybutton']
 html_theme = "sphinx_rtd_theme"
-html_logo = 'images/reflectX-transp.png'
+html_logo = 'images/logo-sol.png'
 highlight_language = 'none'
 
 autoapi_dirs = ['../../ReflectX']
