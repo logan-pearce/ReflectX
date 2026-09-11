@@ -259,7 +259,17 @@ def GetMagInFilter(wavelength, flux, filtername = None, filterwavelength = None,
         return -2.5*np.log10(specflux/vegaflux)
 
 
-def load_all_groups(filename):
+def LoadCustomModel(filename):
+    """ Function for loading a ReflectX model not part of the main grid. Ex: to load the bespoke GJ 876 b models of
+    Pearce, Batalha, and Males 2026, model = LoadCustomModel(path+'ctoo{}-model.nc'.format(CtoO)) returns a dictionary
+    of phase and cloud permutations. 
+
+    Args:
+        filename (str): Complete path to model .nc file
+
+    Returns:
+        dict: Dictionary of ReflectX models contained in .nc file
+    """
     loaded = {}
     with h5netcdf.File(filename, "r+") as f:
         def recurse(group, prefix=""):
