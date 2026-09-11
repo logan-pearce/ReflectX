@@ -34,6 +34,9 @@ Contents
 
 Changelog
 ---------
+**1.0.3 (2026-09-11)**
+
+* Addition of a few new function for loading custom models
 
 **1.0.2 (2026-09-09)**
 
