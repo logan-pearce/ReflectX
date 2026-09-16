@@ -34,6 +34,10 @@ Contents
 
 Changelog
 ---------
+**1.0.4 (2026-09-16)**
+
+* Added MKO Y filter
+
 **1.0.3 (2026-09-11)**
 
 * Addition of a few new function for loading custom models
